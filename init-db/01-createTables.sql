@@ -13,8 +13,7 @@ CREATE TABLE ROUTE
   destination VARCHAR(100) NOT NULL,
   distanceKm INT NOT NULL,
   estimatedTravelTime INT NOT NULL,
-  PRIMARY KEY (origin, destination),
-  UNIQUE (destination)
+  PRIMARY KEY (origin, destination)
 );
 
 CREATE TABLE CUSTOMER
