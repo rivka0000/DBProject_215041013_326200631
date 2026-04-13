@@ -1,1001 +1,501 @@
-origin,destination,distanceKm,estimatedTravelTime
-Apatin,Yelizavetinskaya,171,276
-Trasak,As Samawah,488,286
-Dziergowice,Liangnong,440,110
-Jayanca,Tenggina Daya,381,134
-Cikondang,Oslo,916,222
-Jianling,Fu’an,956,14
-Fort-de-France,Pingshui,335,230
-Ad Dujayl,Nong Muang,199,211
-Dijon,Umeå,467,134
-Dadianzi,Yisa,41,115
-Karangsembung,Nizhniy Bestyakh,829,30
-Guanyao,Sobontoro,546,195
-Tinogasta,Chaman,50,99
-Lage,Siliana,153,64
-Tadrart,Cipadung Timur,531,153
-Chai Nat,Rumoi,72,263
-Villanova,Mölnlycke,621,145
-Quintas,Cachón,130,95
-Ševica,Kaindy,45,4
-Xinji,Marseille,613,4
-Pavia,Durham,83,239
-Guangping,Lezhë,962,22
-Fuan,Kabarnet,976,93
-Bobojong,Karmah an Nuzul,984,67
-Příšovice,Nakhodka,523,19
-Waipukang,Usogorsk,632,289
-Wilkes Barre,Mölndal,54,269
-Glamoč,'Ali Sabieh,832,22
-Komsomol’skiy,Ullubiyaul,353,288
-Tamisan,Krajan,385,84
-Nikopol’,Bulungu,473,180
-Béré,Mende,237,220
-Lechinkay,Cái Dầu,517,185
-Belford Roxo,Hailang,503,256
-Pokrovka,Bolotnoye,373,202
-Santa Catarina Barahona,Sapucaia,898,172
-Lebak Timur,Rawaglagah,323,41
-Jijiga,Oxelösund,863,246
-Sofiyivka,Bailadores,897,250
-Sydney,Chichigalpa,644,35
-Kostel,Panyarang,801,290
-Jastrowie,Banxi,700,186
-Trongsa,Jeleuk,720,236
-Bukabu,Estancia,852,207
-Pinhão,Duqu,1000,111
-Kandete,Buenavista,674,156
-Paris 13,Kambing,578,45
-Alanga,Giesteira,295,128
-Pohang,Bertelhe,897,214
-Angoulême,Pohang,570,231
-Sayang Lauq,Vannes,102,91
-Hudson Bay,Velké Losiny,803,29
-Lukićevo,Dami,778,198
-Longtou’an,Mrkonjić Grad,582,8
-Salgado,Santa Venera,74,147
-Rostov-na-Donu,Itum-Kali,884,192
-Luzhou,Aimadamodo,254,193
-Synevyr,San Francisco,963,83
-Alma,Sindang,675,103
-San Jose,Combapata,944,241
-Dalu,Touguinha,509,41
-Kolirerek,Shazhou,44,142
-São Filipe,Dālbandīn,144,88
-Jiulong,Aranguren,827,285
-Birmingham,Bensonville,106,119
-Sumberejo,Chafé,279,39
-Solna,Bissen,846,241
-Jindong,Mondoteko,809,153
-Hekou,Liujiage,376,252
-Binhe,Qidu,534,115
-Ocoruro,Hankazi,169,291
-Deqing,Biliran,315,284
-Los Charrúas,Rizal,933,278
-Santong,Mulyoagung,856,89
-Kakamega,Renhe,477,174
-Bail,Ilhéus,934,20
-Ozërsk,Las Terrenas,498,166
-Sanyantang,Mātli,665,232
-Pampanito,Rýmařov,718,27
-Plácido de Castro,Igarapé Açu,31,162
-Choloma,Vol’no-Nadezhdinskoye,353,295
-Sacramento,Bojonggenteng,557,219
-Zaraysk,Changwon,480,28
-Aytos,Casilda,141,91
-General La Madrid,Hafrsfjord,347,228
-Ino,Taipalsaari,463,141
-Sulahan,Saryaghash,672,26
-Buchach,Shuangxikou,30,18
-Zamboanguita,Alto do Estanqueiro,116,66
-Planá,Jinhua,512,215
-Ulsan,Czerniewice,42,191
-Adamantina,Palmerston North,69,46
-Yaransk,Fëdorovskoye,679,51
-Tando Jām,Tanabe,281,285
-Karanglo,Hostos,714,79
-Dębe Wielkie,Mojoroto,423,279
-Mŭglizh,Sighnaghi,553,294
-Těšany,Pringu,957,106
-Méru,Jīsh,814,11
-Hannover,Guicheng,74,64
-São Francisco do Conde,Nanjiao,360,24
-Cigemlong,Sidaurip,463,94
-Aţ Ţaybah,Pañgobilian,957,127
-João Alfredo,Panalo-on,403,20
-Cabreúva,Göteborg,131,146
-Mihara,Chenfangji,706,287
-Pandan,Montluçon,566,263
-Adelaide,Pierreville,424,98
-Ibung,Ganjiang,82,192
-Panineungan,Bungo-Takada-shi,129,221
-Wengang,Peace River,795,169
-Stavanger,Daping,633,95
-Ludishan,Los Fresnos,30,214
-Valencia,Pershotravneve,940,107
-Nieuwegein,Novotroitsk,48,108
-Yajiang,Údlice,145,162
-Pombal,Envigado,681,119
-Dawuhan,Kumba,403,9
-Davyd-Haradok,Satun,885,1
-Bua Yai,Rudnik,692,217
-Shuitianhe,Wilmington,619,241
-Tombu,Yengimahalla,511,164
-Beltinci,San Ignacio de Velasco,450,191
-Feni,Athmuqam,115,80
-Dayr al Ghuşūn,Baruny,67,74
-Ruixi,Shaliangzi,186,280
-Mannheim,Pailitas,708,290
-Zamboanguita,Moravský Písek,91,208
-Phu Kradueng,Xike,224,97
-Airmolek,Saguing,528,269
-Yala,Jianfeng,839,20
-Stanovoye,Palcza,537,143
-Xihu,Rautjärvi,886,183
-Sukasari,Monte de Fralães,187,173
-Las Lomas,Paitan Este,90,262
-Kuhmalahti,Plyussa,1000,197
-Donostia-San Sebastian,Bali,587,230
-Bertelhe,Yahotyn,929,89
-Mirskoy,Getafe,456,76
-Djibouti,Oytal,179,214
-Hunkuyi,San Luis,395,38
-Unión de Reyes,Jajce,195,282
-Gagah,Perzów,589,68
-Guishan,Tamaki,192,243
-Awat,Magatos,880,27
-Dongkeng,Uvira,17,67
-Krasnodon,Agago,552,72
-Kalian,Umeå,902,211
-Plateliai,Xianyuan,645,119
-Qinshan,Pasirangin Tiga,812,64
-Kėdainiai,Longsha,6,125
-San Pedro,Francisco Villa,977,275
-Russkaya Polyana,Sijihong,349,56
-Daireaux,Saraza,432,152
-Antaparco,Kangalassy,307,256
-Minakuchi,Altagracia de Orituco,540,22
-Yakovlevo,Příšovice,716,214
-Chanhe,La Jagua de Ibirico,286,51
-Mont-Royal,Palermo,299,65
-Huangliu,Delães,365,242
-Semënovskoye,Argentan,348,11
-São João dos Patos,Siteía,405,49
-Grimshaw,Krasnyy Gulyay,528,171
-Lubień,Hezhai,320,109
-San Carlos,Changtan,545,124
-Batelov,Concepción,820,238
-Ardabīl,Teykovo,34,258
-Nikolayevsk,Belawang,684,113
-Aksakovo,Xijiao,993,267
-Bobadela,Kunduz,548,31
-Lirang,Dalu,42,86
-Ipís,Yinjiacheng,963,7
-Tangkou,Hüremt,201,175
-Sosnogorsk,Syrostan,541,118
-Puyehue,Celestynów,897,171
-Cinyawar,Siumate,651,225
-Myrzakent,Ekasapta,89,229
-Mulan,Ngasinan,48,257
-Runjin,Greater Napanee,503,227
-Amboise,Zhanjia,500,210
-Denyshi,Menuma,756,134
-Douane,Pensilvania,467,249
-Yonghe,Cijeungjing Kaler,377,266
-Anin,Bayramaly,33,153
-Kumbo,Duut,277,145
-Farafangana,Chatian,121,211
-Suva Reka,Fakel,818,43
-Cipari Satu,Ratnapura,393,5
-Shaghat,Qintong,576,44
-Foshan,Cape Coast,279,17
-Pochep,Tongli,913,201
-Gaofeng,Şaḩam,150,97
-Hagonoy,Chahār Burj,319,102
-Ponggeok,Kasungu,505,157
-Oyan,Murmino,944,200
-Padre Bernardo,Tingsryd,261,249
-Shchelkovo,Delaware,797,229
-Tabou,Saint-Lô,633,246
-Trai Ngau,Taraban Timur,130,140
-Pindi Gheb,Frisange,276,138
-Banjar Penyalin,Pinheiral,256,96
-Carcassonne,Skarżysko-Kamienna,993,49
-Benešov,Dengzishan,326,270
-Achiaman,Futu,148,182
-Mhango,Masoli,345,85
-Santa Catalina,Mingyu,928,274
-Dongjiang Matoukou,Samran,379,60
-Outeiro,Jianyi,973,31
-Olszówka,Maevatanana,467,43
-Pimentel,Guadalupe,746,255
-Huaccana,Henghe,939,112
-Hörby,Angren,554,179
-Danxi,Lamalewo,155,122
-Ústí nad Orlicí,Cofimvaba,430,57
-Lunik,Волочаевское,28,79
-Meicheng,Néa Filadélfeia,767,162
-Tuwiri Wetan,Sydney,618,297
-Karangsari,San Francisco de Coray,659,34
-Kudang,Khān Arnabah,704,144
-Orvalho,Juai,399,247
-Watoona,Machala,935,71
-San Antonio,Shijie,715,31
-Rogóźno,Huazhuang,475,246
-Oltinko’l,Bafia,671,217
-Lang Suan,Tianhe,745,137
-Xiaohe,Pavlovskaya,216,190
-Níkaia,Maştağa,464,85
-Sabanalarga,Lingion,844,245
-Krzemienica,Baiqiao,448,161
-Sanming,Vinha,466,92
-Al Khushnīyah,Lixiqiao,220,8
-Bahía Honda,Qitan,673,237
-Tunzhai,Água de Pau,59,296
-Changlong,Yefremov,105,9
-Kungsbacka,Estelí,909,106
-Kos,Ottawa,885,212
-Kiryū,Hangwula,527,227
-San Francisco,Ciparay,500,138
-Vista Hermosa,Tawen Aobao,125,156
-Älvsbyn,Fuzhou,908,138
-Dipayal,Kota Kinabalu,951,220
-Mamurras,Simi Valley,451,78
-Yafan,Dipayal,56,79
-Binubusan,Hat Yai,314,92
-Huaqiao,Tarauacá,987,149
-Neglasari,Changmaoling,52,41
-Fengshan,Tromsø,497,289
-Sukorejo,Rtyně v Podkrkonoší,708,68
-Solsona,Barra Cheia,636,115
-Cincinnati,Kifrī,216,173
-Xuanhua,Zhangcun,313,64
-Padaan,Stoczek Łukowski,248,163
-Yeping,Colón,811,26
-Salavat,Masallātah,371,194
-Valongo,Palon,958,196
-Jatisari,Longcheng,74,122
-Ejigbo,Armação,927,292
-Pasar Kulon,Rassvet,490,226
-Chifeng,Petit Raffray,285,121
-San José,Yabluniv,338,141
-Tarrafal de São Nicolau,Geta,193,283
-Bangolo,Bolhrad,67,96
-Uppsala,Catania,142,195
-Töreboda,Samothráki,916,289
-Cochadas,Torrevieja,730,244
-Shimokizukuri,La Roxas,408,117
-Duozhu,London,314,121
-Zaječar,Big Bend,918,119
-Manturovo,Oropesa,658,158
-Dalonghua,Ban Dung,699,173
-Yuhuazhai,Huaqiao,266,265
-Mugumu,San Rafael,529,232
-Kamsack,Kolor,75,146
-Dessalines,Zhili,83,278
-Batusangkar,Jicomé,857,25
-Santo Domingo Oeste,Ueno,444,202
-Caxias,Lahishyn,396,279
-Rawa Mazowiecka,Passos,193,43
-Yong’an,Nevers,540,114
-Hamilton,Río Hondo,181,257
-Manutapen,Cocachacra,268,12
-Nkhotakota,Gromnik,558,93
-Norsborg,Duowa,447,136
-Caitang,Aucayacu,285,213
-Huangzhai,Fuzhiping,526,108
-Roshnik,Akropong,561,178
-Puerto Santander,Udënisht,635,23
-Zaragoza,Bradford,109,149
-Cangkeuteuk Sabrang,Jacura,42,186
-Salon-de-Provence,Tsalka,142,162
-Joliet,Berovo,261,258
-Yejia,Udobnaya,511,251
-Krajan Pangkah Kulon,Richmond,333,282
-Pombos,Rostokino,188,29
-Dobrošte,Maayong Tubig,505,15
-København,Cihaur,369,232
-Lancaster,Las Varas,836,194
-Cimenga,Yingtan,621,83
-Akriní,Windsor,600,50
-Ivanteyevka,Beoga,970,18
-Magapit,Iroquois Falls,934,34
-Qingyang,Banjar Pekandelan,524,69
-Moville,Episkopí,471,119
-Marechal Deodoro,Tsalka,259,113
-Tarsouat,Kota Kinabalu,720,110
-Raleigh,Nice,263,136
-Kowŏn-ŭp,Bayanhongor,776,238
-Libofshë,El Calvario,767,249
-Żarów,Madalum,419,18
-Ouani,Caetité,950,277
-Nogueira,Fenais da Luz,614,229
-Stronie,Angan,999,129
-Nagrak,Datong,945,8
-Taibai,San Jose,924,30
-Tigpalay,Eybens,685,164
-Laguilayan,Hekou,637,174
-El Lolo,Hienghène,707,152
-Hengzhou,Bodega,673,295
-Kepuh,Zaragoza,933,287
-Privolzhskiy,Villa Allende,9,41
-Barobo,Bowen Island,573,235
-Svoge,Xankandi,406,84
-Selasari,Motala,4,155
-Dŭstí,Kintinku,985,114
-Dukuhmencek Lor,Hanyin Chengguanzhen,997,9
-Sanhe,Norrköping,609,211
-‘Ibrī,La Libertad,943,277
-Akzhal,Salamrejo,281,38
-Anjani Barat,Orlu,409,37
-Libacao,La Plata,692,178
-Khagrachhari,Ribeira Grande,927,83
-Yuanqiao,Hongor,423,204
-Huagai,Kolsko,715,129
-Sansheng,Escola,580,94
-Enköping,Megalópoli,818,209
-Patong,Nahiyat Ghammas,494,233
-Cortinhas,Wringinputih,879,24
-Druya,Magisterial,184,108
-E’erdun Wula,Moijabana,836,110
-Sirāhā,Daxindian,200,12
-Bangkok,Mlimba,383,233
-Zhongzhou,Karlskoga,960,134
-Shulan,Tonggoh,412,257
-Linggamanik,Trnovlje pri Celju,686,269
-Vladimir,Kertosari,42,261
-Maleevsk,Santa Cruz,614,93
-Dadian,Thị Trấn Quan Hóa,250,115
-Sundsvall,Hukeng,333,225
-Le Teil,Reguengos de Monsaraz,840,173
-Ovsyanka,McKinley,979,81
-Xiacang,Vievis,829,214
-Yako,Mawu,248,156
-Korostyshiv,Santiago de Chuco,398,103
-Bontang,Bayan,297,291
-Cicurug,Kétou,539,171
-Atawutung,Marseille,746,72
-Gävle,Ramat Yishay,419,279
-Taiping,Salinungan Proper,109,31
-Düsseldorf,Burujul,627,51
-Ea T’ling,Kuragaki-kosugi,664,262
-Sunfang,Mosteiros,337,85
-Sosnovka,Saint Helier,387,262
-Kawęczyn,El Bálsamo,891,20
-Hengdian,Comodoro Rivadavia,120,142
-Rabaul,Bongandanga,681,143
-Jejkowice,Bhimbar,759,57
-Shāhzādpur,Kapsan-ŭp,292,66
-Massaguet,Svay Rieng,282,65
-Saint Petersburg,Talondang,137,179
-Pakisaji,Kaeng Khoi,226,272
-Zhamao,Hangwula,126,58
-Rakaia,Hamburg,204,158
-Casais de Vera Cruz,Stockholm,887,242
-Novyy Oskol,Bhopālwāla,782,237
-Paraipaba,Ankazoabo,797,121
-Vila Fria,Karpogory,791,12
-Luxia,Jincheng,896,81
-Parravak’ar,Xinshan,362,131
-Cankuzo,Nefta,427,62
-Barra Velha,Kendalrejo,767,197
-Nikolayevsk,Hefu,514,293
-Bulgan,Cipicung Timur,648,261
-Koźmin Wielkopolski,Tangban,7,269
-Sujiatuo,Kapan,812,48
-Curuggoong,Trikora,421,186
-Changzheng,Haarlem,126,139
-Eastern Suburbs Mc,Dmitriyevskaya,950,12
-Vodstroy,Anjie,178,116
-Nay Pyi Taw,Dobryatino,580,226
-Yumaguzino,Warnes,32,192
-Anrong,Badian,352,282
-Thị Trấn Quảng Uyên,Greensboro,490,237
-Osekovo,Colombo,333,127
-Envigado,Rekovac,170,249
-Kaiyun,Mucumpiz,657,247
-Nykarleby,Karasuyama,211,72
-Stockholm,Tamel,199,53
-Dhī as Sufāl,Youngstown,967,259
-Paterson,Xinhua,267,75
-Cafe,Haradok,506,66
-Boconó,Pyatnitskoye,93,246
-Cidadap,Balingoan,135,155
-Catamayo,Litibakul,725,53
-Hexi,Stamboliyski,195,66
-Kipini,Krasnyy Gulyay,56,289
-Ciracap,Colotenango,249,291
-Bački Petrovac,Suugaant,79,233
-Otradnoye,Senovo,294,33
-Shahkot,Bohus,26,93
-Igarapava,Santo Adrião Vizela,153,207
-Wangqingtuo,Krasnyy Lyman,883,46
-Farinheiras,Sarāb,624,79
-Tempe,Seynod,604,64
-Tyrnyauz,Kaji,871,263
-Imbituva,Al Jawādīyah,745,4
-Gongnong,Canedo,975,96
-Tulihe,Mengdong,891,299
-Orvault,Zhongbao,177,170
-Šibenik,Semampir,193,176
-Lubango,Changqing,192,259
-Huandiqiao,Shaxi,75,171
-Lyakhovtsy,Don Tan,217,63
-Huangjiakou,Cuihuangkou,478,198
-Shōbu,Malie,798,36
-Gunung Sugih,Gulod,152,101
-Montecristi,Могила,534,87
-Naushahro Fīroz,Esquel,705,21
-Ludgeřovice,Qiujima,186,46
-Loujiadian,Baraguá,691,14
-Samsan,Lávara,715,281
-Encrucijada,Huiqi,809,180
-Manolás,El Hajeb,144,89
-Portarlington,Otjimbingwe,522,44
-Farnham,Vaughan,766,172
-Daegu,Socota,140,87
-Claye-Souilly,Margherita,979,235
-Bakungan,Jishi,74,47
-Leiwang,Loma Alta,970,213
-Przyborów,Vannes,105,214
-Camajuaní,Guanhães,338,205
-Xirikxiy,Kubangkondang,831,229
-Farnham,Kula,843,136
-Molde,Krasnokholm,921,35
-Himi,Santa María de Jesús,397,281
-Galán,Xiangshan,631,101
-Kaom,Mikulintsy,334,275
-Pilar do Sul,Sedkyrkeshch,897,78
-Baş Göynük,Minglanilla,48,110
-Kumla,Zhuangxing,975,46
-Ilandža,Santo Isidro,572,39
-Tianshan,Tartu,476,221
-Farroupilha,Zhichanghe,482,287
-San Vicente,Juatuba,337,190
-Boychinovtsi,Alderetes,415,61
-Kristiansand S,Wendo,113,112
-Shuanglu,Ovsyanka,490,220
-Muli,Cujillo,986,45
-Bergen,Luanda,297,216
-Asamboka,Palanit,973,172
-Soanindrariny,Matinha,134,61
-Lukovo,Tiantai,939,201
-Koror,Landerneau,28,165
-Anserma,Nové Strašecí,252,67
-Oropéndolas,Pisaras,734,132
-Pingdong,Şirvan,920,65
-Machakos,Anak,379,185
-Santuario,Astanajapura,205,58
-Mocoa,Guandu,63,80
-Qiaochong,Magsaysay,452,157
-Krajan,Fiditi,727,232
-Chauk,El Zapote,862,164
-Charlottenberg,Kolumbug,856,202
-Quiling,Jincun,707,33
-Balboa,Lota,796,96
-Culeng,Salgado,216,51
-Garhi Yāsīn,Nyakhachava,245,236
-Xiahong,Chipata,603,167
-Daguo,Akkol’,330,216
-Konstantinovskoye,Quinta do Sobrado,938,46
-Pangatikan,Torzhok,701,12
-San Fernando de Atabapo,Barakani,721,92
-Niihama,Shibi,298,213
-Tuanjie,Catamayo,755,154
-Mashizhai,Lyon,13,113
-Pindaré Mirim,Delta del Tigre,941,164
-Dushanbe,Murygino,325,85
-Sochaux,Kobryn,979,176
-Yauca,Meziměstí,665,213
-Pombas,Cangzhou,324,223
-Amboanjo,Narganá,170,274
-Banjar Geriana Kangin,Piraquara,728,160
-Shuanggang,Wushan,66,54
-Sukakarya,Cumadcad,673,82
-Ciudad Sandino,Nymburk,34,268
-Rio,Washington,528,169
-Jetis,Plácido de Castro,945,68
-Emiliano Zapata,Sibaté,245,158
-Huanggang,Cheongsong gun,818,136
-Akhtopol,Sebuku,347,266
-Puerto Boyacá,Megulung,986,59
-Berezayka,Xiangang,752,36
-Gustavsberg,Rio Claro,57,16
-Vällingby,N’dalatando,629,44
-Bijeli,Danao,882,72
-Recarei,Criciúma,824,213
-Mingyihe,Fangjun,861,274
-Nowy Duninów,Hobscheid,847,51
-Oklahoma City,Guintubhan,393,238
-Wenchun,Albany,670,192
-Aguadas,Kumba,377,53
-Calabaca,Severo-Zadonsk,342,151
-Kastsyukowka,Ermidas do Sado,623,39
-Évreux,Isiolo,492,69
-Gapuk,La Tebaida,748,156
-Randuagung,Ketapang,597,249
-Oinófyta,Helsingborg,806,59
-Wohyń,Amaury,50,163
-Xianren,Māmu Kānjan,949,193
-New York City,Nanterre,21,25
-Ostashkov,Ferraria,848,256
-Hodošan,Černelavci,423,225
-Xiliguantun,Hegarmanah,25,63
-Kerek,Corumbá,48,122
-Khān Shaykhūn,Putang,21,136
-Passo Fundo,Qümong,926,81
-Kota Kinabalu,Andrijevica,615,195
-Karangturi,Thames,519,152
-Buliok,Oslo,608,82
-Huidong,Perm,693,241
-Phúc Thọ,Tabu,612,10
-Okegawa,Quilmes,637,121
-Cukalat,Baru Timur,322,96
-Mustvee,Klippan,292,38
-Yancheng,Druju,663,163
-Tabunok,Sukakerta,826,37
-Malummaduri,Évodoula,247,293
-Chinoz,Bahaodi,833,28
-Divinópolis,Rainis,3,263
-Acandí,Khantaghy,430,249
-Huangji,Ledenice,676,4
-Markog,Örebro,638,298
-Xinhuang,Ganpu,764,145
-Haparanda,Delareyville,867,19
-Ośno Lubuskie,Fkih Ben Salah,619,61
-Taiyigong,Khoa,771,206
-Jhumra,Duodaoshi,318,261
-Ji’an,Jiujiang,654,32
-Tala,Murmansk,89,150
-Akarakar,Athmuqam,561,103
-Cúa,Gulrip’shi,73,56
-Lengkeng,Sidu,414,38
-San Juan de Dios,Lápas,828,257
-Skórzec,Pregonero,71,72
-Qinggis Han,Magtaking,568,300
-Bulembu,Hengli,756,170
-Bibai,Salon-de-Provence,314,167
-Duraykīsh,Khu Khan,418,227
-Cigoong,Pilang,464,210
-Chengjiao,Shiyaogou,619,217
-Dalong,Dresden,17,49
-Chantepie,Qingshan,971,153
-Dongtian,São Lourenço,603,28
-Jalālpur,Guandu,148,52
-Ulme,Tarata,369,3
-Leskovac,Chenqiao,167,163
-Nong Yai,Capacmarca,228,190
-Abengourou,Río Pico,246,143
-Boulsa,Tyshkivka,788,76
-Bryan,Polazna,426,135
-Shitun,Fujisawa,245,22
-Saint Petersburg,Aachen,107,32
-Sanrao,Chełmża,337,255
-Buenos Aires,Rakitovo,915,66
-Napanee Downtown,Sinuknipan,114,102
-Jinji,Askeaton,178,118
-Postmasburg,Al Khirāb,166,119
-Ytterby,Long Thành,747,246
-Castainço,Paris 08,329,78
-Zhapu,Soweto,242,121
-Heshi,Anzihao,28,100
-Stepove,Funza,534,55
-Mladá Boleslav,Haparanda,342,38
-Jiawu,Mayrtup,320,21
-Chuchkovo,Buyunshan,243,224
-Ourentã,Bërxull,866,102
-Lorino,Ugra,273,123
-Bellavista,Thung Yang Daeng,966,51
-Diaoling,Majāz al Bāb,544,99
-Sagbayan,Boawae,511,127
-Konary,Lajaluhur,206,292
-Siverskiy,Pelabuhanratu,553,274
-Baldone,Shangde,342,3
-Miguel Hidalgo,Xiaojian,254,72
-Colatina,Hyesan-si,139,236
-Braunschweig,Colonia Neuland,449,10
-Las Yaras,Loughrea,149,287
-Yuanhou,Tumu,964,79
-Pucheng,Samsan,323,26
-Ea Drăng,Hino,612,25
-Pobé,Zhongcun,489,275
-Przelewice,Péfki,996,131
-Palaióchora,Yangdang,288,215
-Magburaka,Nawá,356,155
-Borok,Marialva,88,224
-Oranjestad,Udomlya,105,15
-Qaxa,Vreshtas,429,120
-Huixian Chengguanzhen,Thành Phố Thái Bình,684,263
-Sattahip,Jiuchi,823,188
-Erdao,Amboise,884,7
-Pamungguan,San Miguel,200,247
-Cikou,Kortesjärvi,202,222
-Shuiyang,Umbulan,521,144
-Lianghu,Udobnaya,539,85
-Cuiabá,Paris 15,227,99
-Modot,Andahuaylillas,128,247
-Rēzekne,Gurbuki,26,182
-Dhankutā,Martigues,142,266
-Loma Bonita,Daja,177,198
-Arsen’yev,Shibajiazi,863,68
-Bulung’ur,Mbuji-Mayi,670,207
-Ostravice,Stockholm,472,254
-Tékane,Nanqiao,174,99
-Vodyane,Sharïngol,311,199
-Zhoutou,Dayanggezhuang,47,222
-Jiaoqi,Esmeraldas,12,117
-Bendoroto,Zhoutou,141,179
-Châteauroux,Lansing,106,87
-Portela,Zavoronezhskoye,272,220
-Chexi,Jiling,468,290
-Thị Trấn Mỹ Lộc,Shuangjing,802,282
-Hengxi,Nice,205,274
-Xinzhou,Mosoc Llacta,657,117
-Hyesan-si,Xinye,681,18
-Hvar,Guanshan,231,215
-Huyang,Xingguo,624,254
-Granja,Shijiao,332,22
-Oporapa,Matango,430,289
-Compiègne,Candi,3,40
-Kangasala,Rengat,12,139
-Ondangwa,Kara Suu,430,181
-São João del Rei,Claver,643,74
-Amarillo,Melgar,594,50
-Dimiao,Thị Trấn Na Sầm,455,2
-Nariño,Gafanha da Encarnação,966,34
-Pagsanahan Norte,Sagay,899,76
-Duofudu,Solec Nad Wisłą,470,81
-Melgar,Dehang,415,91
-Bailieborough,Volosovo,548,285
-Yujiawu,Voiron,261,258
-Wairiang,Plérin,859,22
-Mugi,Guandian,399,224
-Dardhas,Yanhe,900,7
-Dologon,Šilheřovice,549,152
-Parchowo,Waddān,170,193
-Wang Nam Khiao,Travesía,156,57
-Songkar B,Dingyan,875,227
-Shanguang,Mao’er,100,299
-Dūst Moḩammad Khān,Loúros,445,289
-Wangqinzhuang,Jianghai,342,34
-Mitaka-shi,Tambaksari,48,286
-Jeonju,Ifakara,145,6
-Libenge,Banjar Desa,451,38
-Fenkeng,Seattle,215,266
-Otorohanga,Honglan,982,244
-Carpentras,Gouyan,776,236
-Tanlad,Yingchengzi,668,191
-Coaldale,Changning,995,260
-Postojna,Savé,418,127
-Castelo,Marne-la-Vallée,653,172
-Grammatikó,Danyang,274,231
-Abucayan,Bastos,6,127
-Huquan,Batsari,995,38
-Mazra‘at Bayt Jinn,Chernigovka,379,119
-Vila Pouca da Beira,Pionerskiy,78,116
-Takub,Wu’an,778,37
-Gafanha de Aquém,La Julia,5,73
-Waepana,Saint Helier,845,269
-Susapaya,Alfenas,324,37
-Sirib,Cikaung,462,32
-Minante Segundo,Vladikavkaz,874,31
-Hispania,Santa Catalina,646,28
-Rio de Moinhos,Koszarawa,39,32
-Shimen,Carmen,117,220
-Zhaobaoshan,Poponcol,920,46
-Korolevo,Kefar Yona,859,180
-Pueblo,Chã,643,296
-Tuba,Beit Jann,473,22
-Paris 15,Obigarm,21,53
-Namayingo,Porsgrunn,533,282
-Kaliningrad,Messina,177,253
-Bang Nam Priao,Bogi,849,60
-Minien East,Trakan Phut Phon,450,111
-Dzhayrakh,Jinsheng,663,2
-Sanhe,Moose Jaw,129,245
-Idrinskoye,Magisterial,87,196
-Cikalong,Makiv,517,103
-Baćkowice,Lugo,580,266
-Quintas,Manggis,629,60
-Uarini,Novozavidovskiy,631,114
-Taiyigong,Concepcion,112,167
-Lazaro Cardenas,Netvořice,340,207
-Calaya,Adolfo Lopez Mateos,810,95
-Huanchaco,Bueng Khong Long,103,57
-Dongbei,Ayacucho,785,106
-Quinchía,Sovetsk,37,119
-Wucheng,Thị Trấn Quảng Uyên,860,259
-Periyiáli,Guanlu,164,89
-Raojān,Mor Laok,621,277
-Karangsari,Punta Alta,609,208
-Boca de Parita,Kashmor,912,90
-Tadou,Boka,867,198
-Příbram,Maji,569,162
-Shuishiying,Stockholm,688,110
-Dongkeng,Lojigawaran,97,172
-Dashtavan,Timbaúba,634,138
-Ani-e,Maun,754,96
-Cruzília,Lang,82,178
-London,Alor Setar,551,61
-Amsterdam,Tieba,131,138
-Podolí,Ngembo,176,264
-Spanish Wells,Kudara-Somon,510,46
-Jing’an,Radojevo,832,244
-Maunggora,Ngandangan,899,74
-Roanoke,Sinegor'ye,460,199
-Pirapora,Kui Buri,802,47
-Samburat,Rzeszów,503,132
-Derhachi,Soroca,103,80
-Kakhovka,Shuishaping,171,145
-Bečmen,Sokol,84,156
-Hlybokaye,Kajansi,457,85
-Aného,Igarapé Miri,851,4
-Sayapullo,Bayasgalant,392,76
-Ubá,Miastków Kościelny,208,166
-Targanice,Baisha,772,150
-Novoye Leushino,Douane,991,112
-Toluviejo,Clarin,23,258
-Postupice,Lebak,489,233
-Caiyuan,Batou,887,236
-Velký Týnec,Sámara,160,189
-Tomioka,Rybnaya Sloboda,523,91
-Sąspów,Golden,233,219
-Cukalat,Tandayag,858,267
-Kukur,Dalinhe,26,110
-Linmansangan,Poljčane,877,185
-Pinhal de Frades,Borovoy,388,66
-Kara Suu,Staré Město,93,283
-Sangtian,Vilkaviskis,363,19
-Fulu,Žihle,198,233
-Borovichi,Ilovka,583,157
-Morrelgonj,Kufayrit,62,52
-Vojnić,Huata,143,156
-Horad Krychaw,Lianhua,116,205
-Hulyaypole,Nanniu,290,97
-Tirlyanskiy,Phú Vang,873,1
-Omīdcheh,‘Eilabun,920,222
-Rueil-Malmaison,Kuliyapitiya,621,160
-Nîmes,Tanumshede,249,129
-Luntas,Babat,728,252
-Cork,Curumaní,851,237
-Jindong,Loughrea,195,196
-Katy,Foúrnoi,648,63
-Santa Fe,Marataizes,639,294
-Tambulatana,Baitao,1,162
-Najiaying,Polyarnyy,909,36
-Platagata,Angoram,134,300
-Arbais,Katrineholm,203,166
-Bāfq,Sobreiro,707,247
-Bailieborough,Nerópolis,52,102
-Kamionka Strumitowa,Sere,79,48
-Taman,Venezuela,514,24
-Cochrane,Oebai,967,277
-‘Alīābād-e Katūl,Gaohu,143,272
-Kanshan,Dagkar,413,167
-Xarardheere,Mojoagung,860,7
-Qinā,Vitali,166,251
-Būsh,Tongquan,680,111
-Salvacion,Vegreville,985,117
-Truskolasy,Ādilpur,845,85
-Kuantan,São João das Lampas,445,144
-Ligang,Aboisso,693,188
-Fray Luis A. Beltrán,Kokembang,854,220
-Banyubang,Costa Sacate,883,244
-Bukui,Rios Frios,71,279
-Arvika,Buzen,422,1
-Primero de Mayo,Dĩ An,724,147
-Depok,Amboasary,197,279
-Karsin,Runjin,956,52
-Qal‘ah-ye Kūf,Östersund,146,293
-Maracanaú,Carigara,255,245
-Dianwan,Litian,986,196
-Bardaskan,Topdac,405,35
-Borūjerd,Maroúsi,191,191
-Sorang,Tunja,37,223
-Xiaopu,Namling,136,229
-Korba,Voronezh,297,176
-Montpellier,Staryy Oskol,562,248
-Suraż,Nebug,676,270
-Satita,Pamotan,839,300
-San Francisco,Xiaoxi,129,270
-Vesoul,Légua,901,138
-Budagovo,Sūrak,982,210
-Bangkok,Halmstad,280,270
-Sokolac,Oslo,904,8
-Patrocínio,Al Mazār,851,282
-Dongda,Muzambinho,453,30
-Verkh-Usugli,Sinfra,265,254
-Chybie,Bizerte,604,263
-Huallanca,Midrand,134,217
-Mekarsari,Ciorescu,251,108
-Zhelin,Bromma,840,120
-Lyon,Shijia,723,47
-Al Mazra‘ah ash Sharqīyah,Bazhu,256,5
-Farkhor,Wantian,575,102
-Galtek,Krajan Kidul Rojopolo,74,118
-Baitashan,Călăraşi,768,293
-Atarodangwautu,Porvenir,333,292
-Gansa,Lleida,339,159
-Marteleira,Água Retorta,276,11
-Strasbourg,Dabu,595,183
-Kobarid,Mao,494,67
-Mykolayiv,Xinji,807,166
-Mosetse,Worcester,336,55
-Faya-Largeau,København,266,29
-Parramos,Sihai,177,71
-Negoslavci,La Esmeralda,869,259
-Quimilí,Terek,193,2
-Yongning,Annecy,675,167
-La Jicaral,Mengdadazhuang,541,121
-Chicago,Tuanlin,91,149
-Calceta,Badian,174,232
-Cipatat,Huya,754,119
-Maguan,Néa Vrasná,169,171
-Haolin,Margabakti,293,284
-Pomerode,Mizhirah,530,203
-Turmi,Gaoqiao,803,66
-Pora,Tadmur,387,108
-Atakpamé,Miyako,981,39
-Independencia,Chimbas,745,123
-Stockholm,Krapyak Kidul,313,240
-Adolfo Ruiz Cortines,Delicias,705,218
-Hancheng,Lanas,679,125
-Nglengkir,Göteborg,737,219
-Juarez,Borzęta,389,229
-Poitiers,Birigui,771,30
-Toguchin,Shicheng,422,119
-Hobaramachi,Lleida,986,20
-Santa Rita,Xinghua,11,161
-Cornillon,Vitoria-Gasteiz,474,176
-Church End,Pasto,241,62
-Wujiao,Huating,757,244
-Mysiadło,Wangda,424,201
-Golynki,Kobryn,274,70
-Wang Muang,Somovo,510,80
-Tipitapa,Stockholm,666,272
-Pas Pul,Água Retorta,389,258
-Dukuhbadag,Pinheiro,188,119
-Olsztyn,Borisova Griva,845,126
-Labuan,Sarapul,253,283
-Vostryakovo,Nanfeng,46,191
-San Pedro,La Plaine-Saint-Denis,935,250
-Dogarmo,Przyborów,60,87
-Kanḏay,Hāgere Selam,323,97
-Shentong,Buenavista,366,110
-Comé,Bader,19,291
-Sanbaishan,Munjungan,965,60
-Panggungsari,Sandayong Sur,45,118
-Liangyaping,Tugdan,96,86
-Xiaheqing,Mata de São João,784,226
-Fëdorovskoye,Jiuhe,861,249
-Annecy,Jialu,738,248
-Takaishi,Yokkaichi,725,231
-Ḩajjah,Zhoukou,439,165
-San Pedro del Paraná,Campo Belo,542,71
-Pali,Eišiškės,479,210
-Lumsden,Duantan,920,144
-Ozerki,Dhangarhi,202,219
-Karangwaru,Rajsko,374,221
-Gomunice,Hukou,70,90
-Yuanling,Werota,450,67
-Natitingou,Rizal,709,131
-Kulonkali,Lipno,805,88
-Santa Inês,Danidehe,62,214
-Houk,Lương Bằng,273,152
-Kanye,Wuxiang,253,162
-Kibiti,Kashirskoye,476,298
-Sigayevo,Žamberk,468,182
-Votuporanga,Valenciennes,695,88
-Orleans,Fengqiao,523,154
-La Paz de Oriente,Arcena Pequena,356,102
-Francisco Beltrão,Lobuni,441,4
-Fukuma,Bukama,516,114
-Maroantsetra,Zambujal,863,265
-Chãos,Bantarpanjang,859,257
-Bokor,Jinhai,608,19
-Shuyuan,Checun,36,194
-Fontenay-sous-Bois,Maiwang,488,126
-Tvarožná,Maguling,955,108
-Shinyanga,Cabano,227,91
-Pringu,Qinghe,101,257
-Jardín,Mosty,5,232
-Uchaly,Aulnay-sous-Bois,527,149
-Trongsa,Cercal,578,276
-Linxia Chengguanzhen,Aeteke,874,194
-Bibis,Dhamār,335,111
-Debe,Yanai,961,230
-Seltjarnarnes,Conchagua,812,166
-Arkhaía Kórinthos,Karangjaladri,521,35
-Alcorriol,Wierzchosławice,593,229
-Sapernoye,Maksatikha,11,243
-Pavliš,Marsada,342,157
-Shuangqiao,Tongkiling,549,133
-Klaeng,Panjing,521,246
-Havlíčkův Brod,Kyzylorda,525,68
-Náchod,Ambian,478,22
-Kyllíni,Joroan,117,12
-Infonavit,Kafir Yasif,786,219
-Sololá,Siso,628,79
-Yanglang,Asquipata,822,74
-Awgu,Piuí,399,121
-Mendeleyevo,Dresden,46,86
-Luoping,Siedleczka,910,280
-Tanbu,Sundsvall,210,244
-Tsagaanchuluut,Ikey,565,54
-Ķegums,Embi,228,95
-Nukuoro,Longquan,341,148
-Diego de Almagro,Hullo,906,120
-Cibitung,Mérignac,937,188
-Salawu,Lanjaghbyur,251,55
-Emalgolin Mongolzuxiang,Talghar,275,100
-Palana,Bantaeng,498,118
-Zheleznogorsk-Ilimskiy,Dubno,1,273
-Thị Trấn Việt Lâm,Daduo,258,273
-Antonio Toledo Corro,Bagong Barrio,518,248
-Duwakbuter,Oliveira,162,50
-Rayside-Balfour,Shuiting,368,164
-Purwosari,Vakhsh,217,36
-Mingzhong,Belén,524,65
-Samālūţ,Jiangkou,113,80
-Cidahu,Żabno,947,61
-Villa La Angostura,San José del Guaviare,725,126
-Mabyan,Karangturi,956,13
-Xinjiezi,Shahrisabz Shahri,155,6
-Taibai,Luzern,691,117
-Nerópolis,Blois,276,253
-Barang,Faraulep,408,5
-Annaka,Waldbillig,924,107
-Köneürgench,Flen,724,147
-Chitagá,Lorena,119,141
-Bella Vista,Listowel,902,51
-Rybatskoye,Narva,462,23
-Esquel,Dom Pedro,38,127
-Alexandria,Hexi,64,78
-Saraktash,Zel’va,418,73
-Numata,Port Hawkesbury,383,97
-Jaguariaíva,Uromi,375,63
-Mozi,Shixi,566,53
-Yongping,Mashizhai,31,257
-Cláudio,Bailang,938,7
-Georgīevka,Katur,23,112
-Vila Chã,Palermo,850,290
-Kiarajangkung,Niemodlin,358,262
-Cheyenne,Ibabang Tayuman,80,194
-Legok,Shanghu,765,123
-Loma Alta,Asamboka,740,216
-Godziszów Pierwszy,Puerto Aisén,725,120
-Wanbu,Tékane,807,300
-Nizhnekamsk,Al Maḩjal,937,170
-Baguinge,Rio de Moinhos,466,88
-Mancos,Shiree,358,127
-Reutov,Santa Rita Village,184,183
-Aradac,Smiths Falls,206,173
-Temandangjero,Oklahoma City,294,178
-Niort,Menuma,391,180
-Santo Niño,Sopla,663,130
-Riangderi,Kinloch,910,46
-Nova Russas,Warri,201,11
-Fort-de-France,Ban Na,401,172
-Frederico Westphalen,Jixing,6,57
-Tengrela,Cikuning,142,202
-Rio Real,Namibe,518,27
-Pinaring,Tabalosos,559,29
-Porsgrunn,Dongsheng,702,87
-Olejet,Polos,173,254
-Saint-Nazaire,Dingcheng,301,237
-Sugihan,Quaraí,43,214
-Tudela,Şuwayr,630,13
-Retkovci,Lampari,537,235
-Pomiechówek,Mólos,403,52
-Gununggoong,Hongshanzui,245,126
-Al Mazra‘ah,Karvia,219,198
-Gabi,Hoani,963,257
-Tapacocha,Fushë-Bulqizë,147,85
-Baishi,Samanco,958,295
-Cruz de Pau,Kafr Thulth,668,243
-Satun,Ribeirão da Ilha,148,75
-Santa Rosa,Majur,43,169
-Masantol,Azilal,959,89
-Mina Clavero,Katagum,338,259
-Suvorovskaya,Sanqishi,295,239
-Radashkovichy,Quimper,777,28
+plateNumber,model,capacity,carColor,year,status
+Contour,Dakota,19,Maroon,20036,Busy
+G37,Sonoma Club,10,Indigo,10395,Available
+Gran Sport,Sonata,16,Violet,47299,Available
+Viper,ES,11,Violet,80030,Busy
+Neon,Crossfire Roadster,15,Yellow,60569,Busy
+Continental Flying Spur,Silverado,15,Puce,65031,In Maintenance
+Freelander,CTS,11,Goldenrod,69926,In Maintenance
+New Beetle,E-Series,15,Puce,75780,Busy
+600SEL,Legacy,13,Green,91234,In Maintenance
+3500,E-Series,17,Indigo,82273,In Maintenance
+Sunfire,XJ,13,Violet,16936,Busy
+NX,Rio,16,Purple,56697,Busy
+Savana 2500,2CV,13,Green,58667,Busy
+S80,Grand Voyager,12,Turquoise,65649,In Maintenance
+Sunfire,Leaf,13,Pink,431,Busy
+Patriot,G-Class,10,Purple,16318,In Maintenance
+Equator,Diamante,17,Indigo,66906,In Maintenance
+LeSabre,Golf,14,Green,21424,Available
+S70,Continental Flying Spur,12,Turquoise,67731,In Maintenance
+S-Series,960,16,Green,93697,Available
+Nitro,Cherokee,11,Orange,90497,Available
+Savana,Legacy,19,Indigo,35171,In Maintenance
+GX,SL-Class,17,Goldenrod,87767,Available
+M3,Avalanche 2500,20,Khaki,89186,Available
+Riviera,Jetta,14,Indigo,12769,Available
+Courier,80,16,Fuscia,58237,Busy
+Matrix,Monte Carlo,15,Crimson,89080,Busy
+Regal,Jetta,13,Green,96385,In Maintenance
+Laser,M-Class,15,Indigo,67045,Busy
+Continental Mark VII,Suburban 1500,20,Crimson,62962,Busy
+S40,A6,14,Goldenrod,96736,In Maintenance
+Aspire,EX,15,Green,10123,Busy
+C70,300SD,17,Turquoise,51421,In Maintenance
+Pilot,5000S,16,Turquoise,11707,Available
+Venza,Discovery Series II,13,Maroon,60907,In Maintenance
+Stratus,RS6,17,Purple,99763,In Maintenance
+XC70,S4,11,Violet,40403,Busy
+CX-7,Sky,16,Crimson,76292,Busy
+MX-6,VS Commodore,12,Orange,46349,In Maintenance
+Cougar,Suburban 2500,19,Purple,18711,In Maintenance
+300SE,Continental,15,Orange,98401,Busy
+9-3,Familia,18,Purple,45334,Busy
+Viper RT/10,S-Class,12,Goldenrod,12541,In Maintenance
+Caliber,A4,15,Yellow,37515,Available
+Golf,XC70,10,Fuscia,4905,Busy
+Sierra 1500,Insight,20,Fuscia,98803,Available
+Galant,MDX,11,Khaki,8384,Busy
+MKS,Viper,17,Red,63370,In Maintenance
+Charger,Sierra 1500,19,Khaki,85779,In Maintenance
+626,Transit Connect,10,Aquamarine,75771,Busy
+Bronco,Charger,10,Crimson,4333,Available
+Sequoia,Sonata,14,Green,16285,In Maintenance
+Econoline E350,Malibu,20,Fuscia,86548,In Maintenance
+Eldorado,Soul,14,Red,91422,Busy
+Charger,Golf,19,Fuscia,14391,Available
+Azera,S60,17,Puce,92097,Busy
+xD,Firebird,16,Turquoise,40765,Available
+Mirage,3000GT,10,Maroon,83164,Available
+Pathfinder,Ram Van 1500,11,Purple,85138,In Maintenance
+RAV4,Colt,14,Turquoise,52735,Busy
+Crossfire,California,17,Puce,88269,Available
+M,Beretta,19,Blue,67396,Busy
+Forester,Riviera,19,Red,22968,In Maintenance
+3 Series,M,10,Fuscia,21837,In Maintenance
+TSX,Altima,18,Mauv,31761,Available
+Sunbird,RS4,15,Orange,96690,Available
+G,Sierra 1500,11,Orange,91445,Available
+Fox,E-Class,12,Fuscia,7442,Available
+Suburban 1500,Villager,20,Green,58168,In Maintenance
+Corolla,Borrego,17,Mauv,80306,In Maintenance
+Altima,G-Series G30,15,Purple,16894,Available
+Trans Sport,Fox,12,Orange,36888,Available
+Avalon,CL-Class,19,Indigo,24482,Available
+Range Rover,Town & Country,19,Aquamarine,89323,Busy
+New Yorker,ES,12,Green,3031,In Maintenance
+Express 3500,Tacoma,14,Pink,41078,Available
+Mazdaspeed 3,Elantra,11,Teal,83503,In Maintenance
+Corvette,Sierra 1500,12,Mauv,31716,Busy
+Safari,Previa,20,Green,63725,In Maintenance
+Camry,Viper RT/10,12,Mauv,95504,Busy
+SL-Class,Galaxie,13,Goldenrod,84500,In Maintenance
+Taurus X,960,17,Red,11971,Busy
+Daewoo Lacetti,D250,15,Teal,65991,In Maintenance
+Pajero,Cirrus,14,Puce,81989,In Maintenance
+Fleetwood,Mountaineer,15,Puce,49115,In Maintenance
+XJ Series,Legacy,17,Yellow,53070,Available
+Sequoia,GTI,16,Puce,89783,Busy
+Elantra,H3,19,Pink,43518,Busy
+Esteem,Escalade,14,Violet,14528,Busy
+Grand Vitara,R8,15,Puce,46582,Available
+9-3,928,12,Fuscia,17994,Busy
+Sedona,Eclipse,17,Goldenrod,119,In Maintenance
+Corrado,900,17,Khaki,37317,Busy
+Taurus,Express 2500,17,Orange,35487,In Maintenance
+MR2,Fit,13,Pink,62436,Available
+Corvette,Camry Hybrid,15,Turquoise,11620,In Maintenance
+Grand Caravan,Eclipse,18,Turquoise,98412,Busy
+XC60,CL,14,Khaki,27222,In Maintenance
+Navigator L,Sable,10,Indigo,29879,Busy
+900,H3,10,Crimson,59777,In Maintenance
+M Roadster,Corolla,14,Pink,23687,Available
+Camry,Raider,17,Violet,83277,Busy
+Solara,626,12,Red,70909,In Maintenance
+Cougar,Sonoma,11,Khaki,59566,Busy
+Suburban 1500,Ram,10,Khaki,72876,Busy
+XK,Forenza,17,Green,77979,In Maintenance
+Envoy XUV,QX,20,Red,54937,Available
+S40,APV,16,Aquamarine,89500,Available
+Fiero,8 Series,18,Yellow,45760,Available
+A5,Electra,16,Crimson,5904,Busy
+NSX,GL-Class,10,Crimson,30754,Available
+Golf,SL-Class,12,Mauv,45410,Available
+Suburban 1500,Element,19,Mauv,80098,Available
+Lucerne,Impreza,18,Aquamarine,55662,Available
+Continental GTC,Prelude,11,Puce,75679,Busy
+Caprice,Dakota,20,Aquamarine,43178,Busy
+Protege5,Montero,16,Indigo,62943,Busy
+TL,350Z,19,Red,67367,Available
+GS,LS,14,Yellow,71048,Available
+i-350,Ghost,11,Orange,39027,Available
+Ram Wagon B250,Sebring,16,Red,47040,In Maintenance
+B2000,850,17,Red,70281,Available
+Esprit,E-Class,20,Khaki,59463,Available
+F150,Celica,15,Crimson,82421,In Maintenance
+Club Wagon,Silverado,11,Maroon,95868,Busy
+SC,XK,16,Khaki,35580,In Maintenance
+Corvette,Armada,14,Blue,69890,Busy
+Bravada,4Runner,12,Blue,50885,Busy
+Pathfinder,Thunderbird,11,Orange,43661,In Maintenance
+Aero 8,Impreza,17,Maroon,35023,Available
+Passat,Savana,15,Green,11190,Available
+Protege,Safari,12,Indigo,87851,Busy
+Impreza,SL-Class,10,Yellow,65211,Busy
+Discovery Series II,Grand Marquis,10,Yellow,36392,Available
+Bronco,Galant,11,Pink,56217,Available
+Thunderbird,Ram Wagon B150,18,Blue,54315,Available
+XT,Corvette,10,Goldenrod,84716,Busy
+Altima,R-Class,16,Khaki,49936,In Maintenance
+Express 1500,LR3,20,Indigo,46022,Available
+Skylark,ES,19,Maroon,64822,Available
+Aerostar,S-Series,15,Violet,31486,In Maintenance
+GT,Thunderbird,16,Puce,18009,Busy
+Fleetwood,GTO,10,Violet,52978,Busy
+Corvette,Silhouette,13,Goldenrod,21520,Busy
+GranTurismo,Ram 1500,16,Indigo,60591,In Maintenance
+IS-F,Mirage,19,Purple,16650,Busy
+Savana 3500,FX,16,Turquoise,89775,In Maintenance
+Camaro,Corolla,18,Aquamarine,8494,Busy
+Azera,Grand Prix,10,Khaki,28162,Available
+Sorento,9-7X,12,Mauv,6520,In Maintenance
+CTS,Tempo,18,Aquamarine,63308,In Maintenance
+Tundra,Econoline E350,13,Purple,20445,Available
+Jetta,Vandura 1500,15,Mauv,68434,Available
+Accord,XL7,20,Red,56659,Available
+944,Sable,15,Indigo,95552,Available
+S2000,Crown Victoria,15,Goldenrod,8370,Available
+D150 Club,Jetta III,11,Blue,63942,In Maintenance
+TrailBlazer,Suburban 1500,10,Aquamarine,52694,Available
+Stealth,Range Rover,10,Puce,74434,Busy
+Highlander,R8,18,Mauv,7913,In Maintenance
+Lumina,Express 1500,18,Puce,3785,Available
+Dakota,S60,10,Pink,70808,Busy
+Club Wagon,3000GT,20,Goldenrod,47051,In Maintenance
+6 Series,Express 1500,16,Puce,24145,In Maintenance
+Avalanche,Diablo,15,Puce,22280,In Maintenance
+3 Series,D150 Club,17,Khaki,74814,Busy
+Firebird Formula,A3,12,Yellow,57877,Busy
+Prizm,164,18,Aquamarine,62743,Available
+Vandura 2500,Sierra 3500,20,Mauv,38236,Available
+TrailBlazer,TL,14,Crimson,36729,In Maintenance
+Tahoe,E-Class,10,Crimson,14548,Available
+968,Viper,14,Pink,96198,In Maintenance
+Cabriolet,Silverado,13,Blue,25291,In Maintenance
+2500,E-Class,17,Violet,74738,Available
+Solstice,Diamante,20,Red,10735,Busy
+Lancer,V70,11,Fuscia,93415,Available
+Civic,Accord Crosstour,10,Blue,91400,In Maintenance
+Rally Wagon G3500,GT500,13,Turquoise,39512,In Maintenance
+Tracker,Quantum,12,Red,98130,Busy
+LHS,CX-7,14,Orange,84954,Busy
+Tracker,Econoline E250,13,Indigo,4865,In Maintenance
+Bravada,5000S,12,Red,8025,In Maintenance
+G,M,15,Goldenrod,21555,Available
+Corvette,929,17,Goldenrod,72981,Available
+Laser,5 Series,14,Purple,32314,Available
+Q,LS,18,Teal,37082,In Maintenance
+Mustang,Magnum,15,Orange,25122,In Maintenance
+G-Series G30,Cherokee,12,Purple,99707,Available
+Firefly,Mini Cooper S,10,Orange,51378,In Maintenance
+Envoy,Ram 3500,13,Pink,34475,In Maintenance
+ES,Z8,11,Red,93706,In Maintenance
+Optima,Baja,12,Teal,35540,Busy
+Sentra,Quattroporte,11,Crimson,68733,Busy
+A5,LS,14,Puce,23635,Available
+Swift,LeSabre,11,Yellow,40954,Busy
+88,Grand Cherokee,13,Red,77008,Busy
+3000GT,Savana Cargo Van,18,Maroon,95698,Busy
+Mazdaspeed 3,Yaris,12,Puce,54017,Busy
+Avalon,Catera,13,Khaki,61068,Busy
+Odyssey,Passat,12,Yellow,14864,Available
+911,Ranger,14,Violet,33117,Available
+Silverado 2500,GL-Class,15,Puce,37388,In Maintenance
+Neon,Frontier,17,Purple,50404,Available
+Durango,911,20,Blue,22704,In Maintenance
+GT500,2500 Club Coupe,17,Aquamarine,46204,Busy
+A5,Canyon,13,Indigo,57202,Available
+Sidekick,S90,13,Red,51945,Available
+Suburban 2500,Touareg,18,Crimson,17707,In Maintenance
+Blackwood,Range Rover,12,Green,42664,In Maintenance
+Corvette,MX-5,12,Orange,57700,Busy
+C-Class,GTI,20,Violet,38449,In Maintenance
+S-Class,E-Series,18,Puce,94108,Available
+SC,Galant,10,Crimson,67721,Available
+Corvette,Monterey,16,Maroon,83595,Busy
+MDX,Sebring,15,Crimson,61503,In Maintenance
+G8,Econoline E150,18,Aquamarine,89029,Busy
+Savana 2500,Mirage,13,Turquoise,88728,In Maintenance
+Phantom,Town Car,20,Aquamarine,39029,In Maintenance
+200SX,A6,18,Purple,15512,Busy
+2500 Club Coupe,Century,14,Pink,92283,Available
+C-Class,Rally Wagon G3500,20,Maroon,91751,Busy
+Excel,Touareg,12,Orange,23827,In Maintenance
+Econoline E350,CX-9,20,Fuscia,78178,In Maintenance
+Sierra Hybrid,Silverado,17,Teal,42356,In Maintenance
+Aventador,Savana,17,Blue,78410,Available
+Raider,Town Car,11,Teal,32465,Available
+Challenger,Avenger,19,Mauv,59577,Available
+Eos,Cobalt,13,Mauv,30245,Busy
+SC,Quattro,18,Khaki,62861,In Maintenance
+Beetle,xA,10,Fuscia,93048,Available
+Dakota,Sonoma,18,Green,75314,Available
+Escalade,XC90,11,Puce,34072,In Maintenance
+Civic,Jetta,16,Puce,83081,In Maintenance
+Jetta,850,17,Turquoise,179,Available
+M,DTS,20,Goldenrod,81419,In Maintenance
+Wrangler,Town Car,13,Yellow,92375,Busy
+Safari,Neon,18,Teal,65702,Available
+Villager,Lucerne,16,Crimson,40165,Available
+HHR,Aveo,12,Puce,94742,Busy
+Grand Caravan,SC,14,Crimson,25870,In Maintenance
+Trans Sport,Silverado,13,Blue,46098,Busy
+Impala,Sportvan G20,14,Aquamarine,11050,Available
+LS,S8,19,Aquamarine,10126,Busy
+Trans Sport,Quest,16,Blue,61788,Busy
+GX,Intrigue,11,Green,9218,In Maintenance
+Sable,Electra,11,Khaki,67531,Available
+Sunfire,Altima,11,Maroon,28434,Busy
+PT Cruiser,Stratus,12,Indigo,15157,In Maintenance
+L300,Scirocco,20,Teal,54817,Busy
+Prius,Discovery,14,Violet,28417,Available
+Golf,430 Scuderia,15,Fuscia,3772,Available
+Integra,Sentra,19,Teal,47350,Busy
+Lanos,B-Series Plus,13,Indigo,59979,In Maintenance
+4Runner,Jetta,14,Goldenrod,53744,Available
+Ram Van B250,Club Wagon,13,Puce,762,Busy
+Corvette,Daewoo Lacetti,10,Orange,70007,Busy
+Pajero,i-290,15,Violet,45007,In Maintenance
+Sequoia,XJ Series,18,Blue,22939,In Maintenance
+Diablo,F150,15,Violet,40254,In Maintenance
+Galant,Solara,16,Red,88110,Available
+944,XJ Series,16,Fuscia,82429,In Maintenance
+i-370,S10,17,Pink,94175,Busy
+A4,V50,10,Turquoise,33946,Available
+Gemini,S80,17,Mauv,35261,In Maintenance
+Corvette,PT Cruiser,14,Turquoise,61552,Available
+Pajero,Oasis,11,Maroon,53453,Busy
+G55 AMG,Mighty Max,10,Green,24094,Available
+Range Rover,Mazda6,10,Teal,36811,In Maintenance
+RX,Suburban 2500,19,Orange,48414,Available
+Echo,Ion,14,Red,79219,Available
+Prelude,Sonata,19,Mauv,89183,Busy
+RX,Quest,20,Puce,32613,In Maintenance
+Cube,C70,15,Crimson,37047,In Maintenance
+Mohave/Borrego,1 Series,15,Yellow,23178,Available
+Pajero,Continental,14,Fuscia,53445,Busy
+Mustang,E-Series,20,Aquamarine,43349,Busy
+Legacy,Suburban 2500,14,Goldenrod,98922,Available
+Continental,300ZX,14,Goldenrod,34507,Busy
+612 Scaglietti,Sonata,18,Yellow,89650,In Maintenance
+CLS-Class,Mariner,19,Violet,82342,Available
+V70,Festiva,16,Puce,41773,Available
+Civic,Enclave,12,Blue,56356,In Maintenance
+Grand Voyager,Explorer,18,Puce,73524,In Maintenance
+Grand Prix,LS,18,Indigo,91672,In Maintenance
+Tacoma Xtra,Ram 2500,12,Red,8169,In Maintenance
+Sprinter,Mark LT,13,Orange,37632,Busy
+Ascender,Boxster,12,Turquoise,71947,Available
+Mini,Riviera,11,Maroon,27755,Busy
+Sonoma,Camaro,18,Aquamarine,48827,In Maintenance
+Familia,Probe,13,Teal,82946,Available
+Tercel,Sienna,18,Aquamarine,84457,Busy
+HS,626,16,Crimson,96668,In Maintenance
+X6 M,Ram 2500,20,Puce,69692,Busy
+Expedition,Mazda5,16,Orange,88506,In Maintenance
+CTS,Patriot,11,Mauv,42552,In Maintenance
+Sonoma,4Runner,20,Orange,99806,Busy
+Brat,Park Avenue,11,Pink,69316,Busy
+Cabriolet,Accord,13,Violet,42885,Busy
+Spectra,Avalanche,19,Fuscia,42030,In Maintenance
+RX-7,Miata MX-5,11,Violet,73372,In Maintenance
+Venza,Lancer Evolution,14,Turquoise,10335,Available
+Celica,Eclipse,10,Yellow,28443,Available
+M Roadster,Esprit,12,Orange,69104,In Maintenance
+200,Kizashi,12,Violet,56158,Available
+Frontier,S10,15,Mauv,43665,In Maintenance
+Caravan,Fleetwood,12,Pink,55039,In Maintenance
+Sonoma Club Coupe,Tacoma Xtra,20,Blue,78963,Busy
+Wrangler,Prius,14,Orange,99094,Available
+E-Class,Mirage,13,Turquoise,20955,In Maintenance
+Ram 3500,DTS,17,Blue,74167,Available
+Aurora,Alcyone SVX,14,Puce,84986,Busy
+Passat,QX,11,Green,74126,Busy
+Savana 1500,Eclipse,15,Maroon,99137,In Maintenance
+300TE,3500 Club Coupe,13,Purple,99210,In Maintenance
+612 Scaglietti,Lucerne,11,Crimson,76105,Busy
+Corvette,Elantra,14,Yellow,92609,Available
+Trooper,MKZ,17,Mauv,56093,Available
+80,Th!nk,20,Fuscia,81822,In Maintenance
+C-Class,Cobalt SS,18,Purple,9771,Busy
+TT,SJ,15,Fuscia,48848,In Maintenance
+Sundance,Grand Prix,14,Khaki,20127,Busy
+S40,Skyhawk,15,Maroon,49860,Busy
+Fiero,Compass,14,Orange,32542,Available
+TSX,Fiero,20,Puce,90052,Busy
+9000,F150,16,Mauv,83045,Available
+G37,760,16,Violet,79054,In Maintenance
+Thunderbird,GTI,19,Pink,91607,In Maintenance
+Town & Country,SX4,11,Green,50115,Busy
+Millenia,Monaro,18,Khaki,83833,In Maintenance
+Wrangler,Camaro,19,Crimson,86697,In Maintenance
+Ranger,M-Class,14,Purple,38311,Available
+80,Firebird,11,Purple,21764,Busy
+Rio5,944,13,Blue,77461,Busy
+Wrangler,Cobalt,15,Yellow,72647,Busy
+xB,164,13,Indigo,71016,Busy
+Tracker,Town & Country,14,Yellow,33739,In Maintenance
+SJ,SVX,17,Violet,47160,Available
+Sentra,370Z,13,Crimson,42470,Available
+Flex,Century,13,Mauv,41992,Busy
+E-Class,Club Wagon,15,Red,42595,Available
+Montero,A6,18,Mauv,50446,Busy
+Continental,Colt Vista,20,Crimson,29257,Busy
+2500,Navigator L,17,Crimson,44785,Busy
+Accent,Grand Voyager,12,Crimson,58655,Busy
+Endeavor,Vandura G3500,17,Yellow,68699,In Maintenance
+S-Class,Hombre,14,Yellow,26220,In Maintenance
+Freelander,Seville,17,Purple,39442,In Maintenance
+Ram 1500 Club,Fillmore,12,Green,26888,Busy
+Excel,Sigma,17,Khaki,1727,Busy
+ES,Mazda5,10,Green,47954,In Maintenance
+Swift,CTS,14,Turquoise,41480,Available
+4Runner,100,17,Khaki,84480,In Maintenance
+Voyager,RX-7,18,Pink,98461,In Maintenance
+Sierra 3500,Cooper,13,Red,14587,Busy
+Paseo,Sportage,16,Orange,45973,Busy
+Rodeo,Laser,16,Green,59514,In Maintenance
+Blazer,S10,11,Teal,77650,Busy
+MX-5,Ram 3500,18,Yellow,8271,Busy
+LX,M5,18,Violet,27245,Available
+Freestar,ES,10,Violet,50074,Available
+Eclipse,Murciélago,16,Pink,64060,Busy
+Fox,LX,15,Red,18598,In Maintenance
+Gran Sport,8 Series,15,Orange,41687,Busy
+Maxima,E-Class,10,Mauv,81730,Available
+Grand Voyager,M3,14,Maroon,51881,Available
+Quattroporte,Firebird,16,Fuscia,5427,Busy
+Mountaineer,V70,16,Aquamarine,90784,Available
+Challenger,VS Commodore,17,Goldenrod,18182,In Maintenance
+Escalade EXT,Yukon XL 2500,17,Crimson,8586,Busy
+XL-7,C-Class,13,Red,39293,Available
+9-5,Escort,19,Green,80397,Busy
+Avalon,650,10,Khaki,40678,In Maintenance
+V8,Yukon,10,Teal,28301,In Maintenance
+Cougar,Grand Marquis,12,Crimson,70930,Busy
+Avalanche 1500,Compass,11,Teal,94955,Busy
+Prizm,Celica,17,Khaki,41113,Busy
+Celica,Thunderbird,18,Mauv,63714,Available
+Navigator,TundraMax,12,Fuscia,72780,Busy
+Type 2,Tempo,17,Pink,15918,In Maintenance
+Talon,MPV,16,Red,11822,Busy
+Continental,Wrangler,12,Puce,28563,Busy
+Maxima,Outlander,10,Crimson,55408,Available
+57,Grand Caravan,18,Fuscia,14867,Available
+Wrangler,LeMans,10,Green,49900,Busy
+Express 2500,Aspire,17,Mauv,28513,Busy
+Ram 1500,XC70,19,Puce,42563,In Maintenance
+Mariner,Sequoia,10,Turquoise,57733,In Maintenance
+Silverado 2500,MX-5,15,Orange,34433,Busy
+V8 Vantage,Spyder,10,Orange,30695,Busy
+1 Series,Element,17,Orange,335,In Maintenance
+Navigator,NSX,18,Teal,82910,In Maintenance
+Lumina,QX56,16,Teal,62235,Available
+Corsica,Mark VIII,15,Turquoise,55933,Available
+Accent,Vision,12,Teal,24288,Busy
+Rodeo,Sportage,13,Orange,12629,Available
+Prizm,Range Rover,19,Khaki,34860,Available
+Corsica,Outlander Sport,13,Fuscia,18002,Busy
+NSX,Savana 1500,17,Crimson,53326,In Maintenance
+S8,Prelude,20,Yellow,47951,Available
+MX-6,Carrera GT,16,Red,83898,In Maintenance
+Milan,Prius,11,Green,19934,In Maintenance
+612 Scaglietti,350Z,20,Aquamarine,66690,Available
+Ram Van 1500,Discovery Series II,10,Turquoise,30494,Available
+Neon,Civic,10,Aquamarine,59134,Busy
+600SEL,Aerostar,20,Turquoise,2074,In Maintenance
+Safari,Tredia,16,Indigo,27232,In Maintenance
+612 Scaglietti,Aztek,13,Fuscia,82168,In Maintenance
+MDX,Versa,19,Purple,77317,In Maintenance
+Corvette,Lumina APV,18,Violet,59762,In Maintenance
+Viper,Pacifica,12,Maroon,84569,Available
+Tribute,Passport,16,Purple,62915,Available
+Golf,M6,18,Orange,27560,Busy
+DB9,Ipsum,18,Fuscia,52776,Busy
+Sebring,Maxima,20,Puce,91110,In Maintenance
+Trans Sport,Electra,10,Puce,77958,Busy
+Space,Corvette,12,Khaki,1630,Busy
+Tracer,Passat,13,Purple,41862,Busy
+MX-5,A4,14,Blue,6077,Available
+80,Suburban 2500,15,Mauv,89840,Busy
+Neon,900,18,Teal,27331,In Maintenance
+Villager,Galant,12,Fuscia,36733,Busy
+Truck,Firefly,16,Pink,60481,Busy
+Jetta,Cabriolet,12,Teal,4812,Busy
+Diamante,Laser,16,Turquoise,9013,Available
+Grand Am,Civic,18,Red,9257,Available
+E350,VUE,15,Crimson,37848,Available
+Sprinter 2500,T100 Xtra,13,Maroon,11226,Busy
+Cabriolet,Sable,13,Teal,92161,Available
+Protege,Prius,17,Green,18679,Busy
+Colorado,Sierra,18,Blue,9213,Available
+Silverado 1500,Seville,19,Orange,83153,Available
+Express 1500,CX,20,Red,87695,In Maintenance
+Vandura 1500,Regal,10,Goldenrod,75349,Busy
+Sportage,Accent,17,Teal,78005,In Maintenance
+Millenia,GTI,15,Yellow,50520,In Maintenance
+Silhouette,Accord,14,Green,96405,Busy
+458 Italia,V70,14,Turquoise,5258,In Maintenance
+STS,SX4,17,Goldenrod,50481,Available
+S4,Cabriolet,17,Blue,99759,Busy
+SJ,Ram 1500,15,Orange,62880,In Maintenance
+Lancer,Sierra,17,Puce,46433,Available
+Freestar,Firefly,18,Goldenrod,47022,In Maintenance
+CR-V,i-370,18,Purple,60449,Available
+550,Navigator,11,Red,62612,Available
+Rally Wagon G3500,Sierra 2500,13,Fuscia,59586,In Maintenance
+Acadia,GranTurismo,11,Fuscia,47725,Busy
+Econoline E150,Miata MX-5,11,Indigo,22649,Busy
+Focus,Tribute,12,Red,45869,Busy
+Passport,Mustang,14,Green,4530,Available
+S80,Ram Van 2500,19,Blue,1870,Available
+Ram 1500,Tiburon,12,Crimson,74016,In Maintenance
+V70,B-Series,20,Maroon,33015,In Maintenance
+Blazer,M5,19,Blue,86994,In Maintenance
+GT500,Defender,15,Indigo,74185,Busy
+Yukon XL 1500,XJ Series,20,Red,35538,Available
+Ascender,CL,19,Aquamarine,2348,Busy
+GL-Class,NSX,20,Crimson,29025,Available
+Armada,Crown Victoria,14,Goldenrod,85247,Busy
+XL7,Legend,15,Pink,84305,Available
+Grand Cherokee,T100,18,Fuscia,36902,Available
+Astro,E150,15,Teal,28267,In Maintenance
+Civic,626,19,Turquoise,92753,Busy
+Spectra,MR2,16,Orange,5893,Available
+Solara,Grand Prix,19,Pink,99858,In Maintenance
+Verano,300ZX,18,Purple,78501,In Maintenance
+GS,Cabriolet,16,Red,24517,Busy
+Sonata,Eclipse,19,Red,29476,In Maintenance
+Titan,RX-8,20,Turquoise,14237,In Maintenance
+Land Cruiser,Civic,19,Pink,40332,Busy
+Mountaineer,Swift,19,Crimson,73978,In Maintenance
+Loyale,SL-Class,18,Pink,28982,Busy
+Discovery,A6,12,Teal,73293,In Maintenance
+Legacy,Camaro,11,Blue,45654,Busy
+G8,LTD Crown Victoria,20,Indigo,48743,Busy
+GTI,Firefly,13,Violet,27365,Busy
+Range Rover,C-Class,12,Mauv,54728,Busy
+Prizm,Mariner,12,Fuscia,5454,In Maintenance
+Vitara,Town Car,15,Pink,94587,Available
+LS,Freestyle,15,Blue,95748,Busy
+Mazdaspeed6,Solara,20,Violet,87214,Available
+RDX,G-Series G10,13,Violet,86080,In Maintenance
+98,Yukon,20,Yellow,52692,In Maintenance
+XL7,9-5,12,Mauv,85929,Available
+ES,Cabriolet,20,Yellow,40121,In Maintenance
+Tahoe,Mirage,17,Goldenrod,15870,Available
+Sonata,GTI,14,Aquamarine,23476,In Maintenance
+Escort,Courier,17,Khaki,42096,Available
+Eclipse,Ram 1500,15,Pink,57101,Busy
+M5,RDX,17,Green,78456,Available
+Park Avenue,G,15,Purple,88296,Available
+Tacoma,SLK-Class,16,Aquamarine,95723,In Maintenance
+Passat,S4,13,Khaki,21248,In Maintenance
+LS,Wrangler,18,Indigo,7464,Busy
+Grand Prix,Explorer Sport Trac,20,Khaki,10543,Available
+S-Type,Sportage,13,Yellow,11130,In Maintenance
+Cayenne,Caravan,15,Violet,7332,Available
+Express 2500,Cutlass Supreme,17,Teal,34911,In Maintenance
+M-Class,Impreza,18,Puce,42102,Available
+Caliber,Cavalier,18,Aquamarine,42120,In Maintenance
+Caravan,Festiva,12,Fuscia,3184,Busy
