@@ -53,7 +53,7 @@ def load_seed_data():
             if m:
                 customers.add(int(m.group(1)))
 
-            # RIDE ID
+            # RIDE ID  
             m = re.search(r"INSERT INTO RIDE.*VALUES\s*\((\d+),", line)
             if m:
                 ride_ids.add(int(m.group(1)))
