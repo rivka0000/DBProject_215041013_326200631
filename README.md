@@ -28,3 +28,5 @@ One of the main features of the system is scheduling a new ride. In this process
 In addition, the system allows easy data entry through simple forms, management of existing data, and tracking of the company’s activity in a clear and organized way.
 
 Overall, the system is designed to help manage transportation operations efficiently, in a simple and user-friendly way.
+
+Link to the AI Studio website:  
