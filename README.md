@@ -81,6 +81,10 @@ third method (python scrypt):
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be55aba6-9bee-41c1-ae56-6765ecaec944" />
 
+Backup Screenshot:
+
+
+
 
 
 
