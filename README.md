@@ -29,4 +29,6 @@ In addition, the system allows easy data entry through simple forms, management 
 
 Overall, the system is designed to help manage transportation operations efficiently, in a simple and user-friendly way.
 
+דברקשמד:
+
 Link to the AI Studio website:  
