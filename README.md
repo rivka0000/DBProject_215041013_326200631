@@ -66,9 +66,17 @@ Dsd diagram:
 <img width="5025" height="2028" alt="erdplus (4)" src="https://github.com/user-attachments/assets/c83b6b14-a570-4da0-8d68-eae81b18bf88" />
 
 Screenshots of the three selected data insertion methods:
+
 first method:
+
 ![WhatsApp Image 2026-04-14 at 11 37 14](https://github.com/user-attachments/assets/e9db0304-60f8-49ad-b02d-546f2acf2fcd)
 ![WhatsApp Image 2026-04-14 at 11 37 14 (1)](https://github.com/user-attachments/assets/8f774ec8-2a16-4105-8f0d-8df5a1a1add6)
+
+second method:
+
+
+
+
 
 
 
