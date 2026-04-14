@@ -77,6 +77,11 @@ second method:
 ![WhatsApp Image 2026-04-14 at 11 37 14 (1)](https://github.com/user-attachments/assets/d3fb1ce3-e3cc-4816-bbeb-74b85f03bb55)
 ![WhatsApp Image 2026-04-14 at 11 37 14](https://github.com/user-attachments/assets/3e6c4387-6da3-4677-8c58-459d6c759bf8)
 
+third method (python scrypt):
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be55aba6-9bee-41c1-ae56-6765ecaec944" />
+
+
 
 
 
