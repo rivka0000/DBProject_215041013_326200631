@@ -37,7 +37,7 @@ def load_all_drivers():
     return drivers
 
 # =========================
-# יצירת נהגים
+# יצירת נהגים   
 # =========================
 
 def generate_drivers(n, existing_drivers):
