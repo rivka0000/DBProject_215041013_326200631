@@ -56,4 +56,4 @@ screens:
 
 
 
-Link to the AI Studio website:  
+Link to the AI Studio website:  https://ai.studio/apps/9c49efd4-73ff-40a2-84b3-add04e22e127?fullscreenApplet=true
