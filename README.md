@@ -86,10 +86,8 @@ Backup Screenshot:
 <img width="1920" height="1080" alt="‏‏צילום מסך (362)" src="https://github.com/user-attachments/assets/c8f77d9a-d10b-4d80-b19b-754d82aadc96" />
 <img width="1920" height="1080" alt="‏‏צילום מסך (363)" src="https://github.com/user-attachments/assets/93cf85a4-5fe8-4cf3-83f2-533428341235" />
 
-
-
-
-
+<img width="1920" height="1080" alt="‏‏צילום מסך (366)" src="https://github.com/user-attachments/assets/b83a24cb-9232-4111-b357-7a2dfd1d1f3c" />
+<img width="1920" height="1080" alt="‏‏צילום מסך (365)" src="https://github.com/user-attachments/assets/5de038b4-7f31-4056-a38c-7a5612cbfbdb" />
 
 
 
