@@ -83,6 +83,10 @@ third method (python scrypt):
 
 Backup Screenshot:
 
+<img width="1920" height="1080" alt="‏‏צילום מסך (362)" src="https://github.com/user-attachments/assets/c8f77d9a-d10b-4d80-b19b-754d82aadc96" />
+<img width="1920" height="1080" alt="‏‏צילום מסך (363)" src="https://github.com/user-attachments/assets/93cf85a4-5fe8-4cf3-83f2-533428341235" />
+
+
 
 
 
