@@ -4,6 +4,7 @@ import csv
 import os
 from datetime import datetime, timedelta
 
+
 # =========================
 # בסיס נתיבים (חשוב!)
 # =========================
@@ -42,9 +43,10 @@ def load_seed_data():
         for line in f:
 
             # DRIVER
-            m = re.search(r"\(\s*'[^']*'\s*,\s*'[^']*'\s*,\s*(\d+)\s*,", line)
-            if m:
-                drivers.add(int(m.group(1)))
+            if "INSERT INTO DRIVER" in line:
+                m = re.search(r"\(\s*'[^']*'\s*,\s*'[^']*'\s*,\s*(\d+)\s*,", line)
+                if m:
+                    drivers.add(int(m.group(1)))
 
             # CUSTOMER
             m = re.search(r"\(\s*(\d+)\s*,", line)
@@ -61,10 +63,11 @@ def load_seed_data():
             if m:
                 maintenance_keys.add((m.group(1), m.group(2)))
 
-            # ROUTE
-            m = re.search(r"\('([^']+)',\s*'([^']+)',", line)
-            if m:
-                routes.add((m.group(1), m.group(2)))
+            # ROUTE (רק מטבלת ROUTE!)
+            if "INSERT INTO ROUTE" in line:
+                m = re.search(r"\('([^']+)',\s*'([^']+)',", line)
+                if m:
+                    routes.add((m.group(1), m.group(2)))
 
             # VEHICLE
             m = re.search(r"'(\d{2}-\d{3}-\d{2})'", line)
