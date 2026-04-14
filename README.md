@@ -57,3 +57,13 @@ screens:
 
 
 Link to the AI Studio website:  https://ai.studio/apps/9c49efd4-73ff-40a2-84b3-add04e22e127?fullscreenApplet=true
+
+Erd diagram:
+
+<img width="5025" height="2028" alt="erdplus (3)" src="https://github.com/user-attachments/assets/d589a425-6fc0-4c3a-b97b-5d893f5d2405" />
+
+Dsd diagram:
+<img width="5025" height="2028" alt="erdplus (4)" src="https://github.com/user-attachments/assets/c83b6b14-a570-4da0-8d68-eae81b18bf88" />
+
+
+
