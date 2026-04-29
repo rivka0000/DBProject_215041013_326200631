@@ -997,6 +997,8 @@ WHERE plateNumber = (
 ORDER BY maintenanceDate DESC;
 <img width="323" height="31" alt="image" src="https://github.com/user-attachments/assets/b3ec90cc-4bd6-46dc-88fc-ba2b9b37406e" />
 
+לאחר הוספת האינדקס ניתן לראות ירידה בזמן הריצה של השאילתה. הסיבה לכך היא שבסיס הנתונים לא היה צריך לסרוק את כל הטבלה, אלא השתמש באינדקס כדי להגיע מהר יותר לשורות המתאימות.
+
 
 
 
