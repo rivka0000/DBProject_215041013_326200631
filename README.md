@@ -525,4 +525,96 @@ ORDER BY R.orderDate DESC, R.startTime DESC;
 
 
 
+שאילתות DELETE 
 
+DELETE 1 — מחיקת נסיעות מבוטלות ישנות
+תיאור השאילתא
+
+שאילתא זו מוחקת נסיעות שמסומנות כ־"cancelled" ושייכות לשנים קודמות בלבד.
+המטרה היא לנקות מהמערכת נתונים ישנים ולא רלוונטיים.
+
+השאילתא משתמשת בשדה תאריך (orderDate) ובפונקציית EXTRACT כדי לבדוק את השנה, ולכן עומדת בדרישת שימוש בתאריכים.
+
+קוד השאילתא 
+DELETE FROM RIDE
+WHERE status = 'Cancelled'
+  AND EXTRACT(YEAR FROM orderDate) < EXTRACT(YEAR FROM CURRENT_DATE);
+צילומים נדרשים
+צילום מצב לפני – הרצת SELECT עם אותם תנאים
+צילום הרצה – ה־DELETEכולל rows affected
+צילום מצב אחרי – הרצת SELECT שוב להראות שהרשומות נמחקו
+
+<img width="1168" height="433" alt="image" src="https://github.com/user-attachments/assets/a8bdb7f8-7346-4ddd-817f-b7fa78242485" />
+<img width="946" height="388" alt="image" src="https://github.com/user-attachments/assets/10b4c5a4-0d34-4cf2-9684-3c142a80198e" />
+<img width="1133" height="501" alt="image" src="https://github.com/user-attachments/assets/b31af61d-acb1-42fa-b565-bf6a372df3c2" />
+
+
+
+
+
+DELETE 2 — מחיקת תחזוקה ישנה לרכבים פעילים
+
+
+
+
+תיאור השאילתא
+
+שאילתא זו מוחקת רשומות תחזוקה ישנות (מעל שנתיים), אך רק עבור רכבים שאינם פעילים כיום.
+המטרה היא לנקות מהמערכת מידע תחזוקה ישן שאינו רלוונטי לרכבים שאינם בשימוש, תוך שמירה על נתונים חשובים של רכבים פעילים.
+
+השאילתא משלבת בין הטבלאות MAINTENANCE ו־VEHICLE באמצעות תת־שאילתא עם EXISTS, ובודקת עבור כל רשומת תחזוקה האם קיים רכב תואם שאינו פעיל.
+
+בנוסף, נעשה שימוש בתנאי על שדה התאריך maintenanceDate כדי למחוק רק רשומות ישנות, ולכן השאילתא עומדת בדרישת שימוש בתאריכים.
+
+השאילתא אינה טריוויאלית משום שהיא משלבת תנאי על תאריך יחד עם בדיקה של קשר בין טבלאות שונות, ולא פועלת על טבלה אחת בלבד.
+
+קוד השאילתא
+DELETE FROM MAINTENANCE m
+WHERE m.maintenanceDate < CURRENT_DATE - INTERVAL '2 years'
+  AND EXISTS (
+      SELECT 1
+      FROM VEHICLE v
+      WHERE v.plateNumber = m.plateNumber
+        AND v.status <> 'Active'
+  );
+
+צילומים נדרשים
+צילום מצב לפני – SELECT על MAINTENANCE עם התנאים
+צילום הרצה – ה־DELETE + מספר רשומות שנמחקו
+צילום מצב אחרי – SELECT שוב להראות שהרשומות נמחקו
+
+
+
+
+<img width="1349" height="936" alt="image" src="https://github.com/user-attachments/assets/ae755932-b829-4bae-ac9b-80ac5a280439" />
+<img width="1299" height="897" alt="image" src="https://github.com/user-attachments/assets/da6e0ac8-e553-407e-bf26-84742dea866b" />
+<img width="1235" height="802" alt="image" src="https://github.com/user-attachments/assets/7d9c5b62-a5cb-4993-900e-3a6ee1db1664" />
+
+
+
+DELETE 3 — מחיקת נהגים לא פעילים ללא נסיעות
+
+
+
+תיאור השאילתא
+שאילתא זו מוחקת נהגים שאינם פעילים ואין להם אף נסיעה במערכת.
+מבחינה עסקית, נהגים כאלה אינם רלוונטיים למסך ניהול הנהגים, ולכן ניתן להסירם בלי לפגוע בהיסטוריית הנסיעות של המערכת.
+השאילתא משתמשת בתת־שאילתא עם NOT EXISTS כדי לבדוק שאין לנהג אף נסיעה בטבלת RIDE, ולכן היא אינה טריוויאלית.
+
+קוד השאילתא
+
+DELETE FROM DRIVER d
+WHERE d.status <> 'Active'
+  AND NOT EXISTS (
+      SELECT 1
+      FROM RIDE r
+      WHERE r.licenseNumber = d.licenseNumber
+  );
+
+
+צילום מצב לפני – SELECT שמראה נהגים שאינם פעילים ואין להם נסיעות.
+צילום הרצה – ה־DELETE ומספר הרשומות שנמחקו.
+צילום מצב אחרי – SELECT שוב שמראה שאין יותר נהגים שעומדים בתנאי הזה.
+<img width="1307" height="501" alt="image" src="https://github.com/user-attachments/assets/63e9f2b0-3329-401b-b993-0868a8788549" />
+<img width="1306" height="701" alt="image" src="https://github.com/user-attachments/assets/b4eda5f3-895c-4622-a1ce-2f86c638411a" />
+<img width="1304" height="492" alt="image" src="https://github.com/user-attachments/assets/1ab4ab4f-d7ba-4ede-9839-860413c56f1c" />
