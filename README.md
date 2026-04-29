@@ -822,6 +822,42 @@ WHERE model = 'Toyota Corolla';
 צילום מצב בסיס הנתונים לאחר פקודת הcommit שנשאר כפי שהיה:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ad6375d9-65e4-4579-b208-fb808748c521" />
 
+אילוצים:
+אילוץ ראשון:
+-- Constraint 1:
+-- קיבולת רכב חייבת להיות גדולה מ-0
+ALTER TABLE VEHICLE
+ADD CONSTRAINT chk_vehicle_capacity_positive
+CHECK (capacity > 0);
+
+-- בדיקה שהאילוץ עובד, אמור להיכשל
+INSERT INTO VEHICLE (plateNumber, model, capacity, carColor, year, status)
+VALUES ('TEST001', 'Test Model', 0, 'White', 2020, 'Available');
+
+הסבר:   האילוץ מוודא שלא ניתן להכניס רכב עם קיבולת לא תקינה, כלומר קיבולת אפס או מספר שלילי.
+
+צילום שגיאה ךאחר ניסיון הכנסת ערך סותר:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b863535d-68f9-4c81-8881-6d052807cf49" />
+אילוץ שני:
+-- =====================================================
+-- Constraint 2:
+-- מרחק נסיעה חייב להיות הגיוני (בתוך ישראל)
+-- =====================================================
+
+ALTER TABLE ROUTE
+ADD CONSTRAINT chk_route_distance_valid
+CHECK (distanceKm > 0 AND distanceKm <= 500)
+NOT VALID;
+
+-- בדיקה - אמור להיכשל
+INSERT INTO ROUTE (origin, destination, distanceKm, estimatedTravelTime)
+VALUES ('Test Origin', 'Test Destination', 800, 60);
+
+
+הסבר:   האילוץ מווודא שמרחק הנסיעה חיובי ואינו עולה על 500 ק"מ.
+בעת הוספת האילוץ התברר כי קיימים נתונים בטבלה שאינם עומדים בתנאי האילוץ. לכן נעשה שימוש באפשרות NOT VALID, שמאפשרת להוסיף את האילוץ מבלי לבדוק את הנתונים הקיימים, אך עדיין לאכוף אותו על נתונים חדשים.
+צילום שגיאה ךאחר ניסיון הכנסת ערך סותר:
+
 
 
 
