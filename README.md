@@ -825,7 +825,7 @@ WHERE model = 'Toyota Corolla';
 אילוצים:
 אילוץ ראשון:
 -- Constraint 1:
--- קיבולת רכב חייבת להיות גדולה מ-0
+-- קיבולת רכב חייבת להיות גדולה מ- 0 כדי לא להכניס רכב ללא מושבים כלומר חסר משמעות
 ALTER TABLE VEHICLE
 ADD CONSTRAINT chk_vehicle_capacity_positive
 CHECK (capacity > 0);
@@ -878,6 +878,42 @@ VALUES ('Test Origin2', 'Test Destination2', 50, 0);
 
 צילום שגיאה לאחר ניסיון הכנסת ערך סותר:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/573d24fa-6a1a-4f13-824a-e152e9d3874d" />
+הערה: ליד כל אילוץ מוסבר היטב מה משמעותו ומה מטרתו לפי הדרישה- כלומר מוטיבציה ותועלת.
+
+אינדקסים: 
+אינדקס 1: idx_ride_orderdate
+
+האינדקס נוסף על העמודה orderDate בטבלת RIDE.
+המוטיבציה להוספת האינדקס היא שבמערכת קיימים מסכים שבהם המשתמש מחפש נסיעות לפי תאריך או לפי טווח תאריכים. מכיוון שטבלת הנסיעות גדולה ומכילה 20,000 רשומות, חיפוש לפי תאריך עלול להיות איטי יותר ללא אינדקס.
+האינדקס מאפשר לבסיס הנתונים להגיע מהר יותר לרשומות הרלוונטיות במקום לעבור על כל הטבלה.
+
+-- =====================================================
+-- Index 1: חיפוש נסיעות לפי תאריך
+-- מתאים למסך ניהול נסיעות לפי טווח תאריכים
+-- =====================================================
+
+DROP INDEX IF EXISTS idx_ride_orderdate;
+
+EXPLAIN ANALYZE
+SELECT rideId, orderDate, startTime, endTime, status, paymentMethod
+FROM RIDE
+WHERE orderDate BETWEEN DATE '2026-03-01' AND DATE '2026-03-31'
+ORDER BY orderDate, startTime;
+<img width="868" height="34" alt="image" src="https://github.com/user-attachments/assets/8a036358-b91b-4390-8b72-19d51498f855" />
+
+CREATE INDEX idx_ride_orderdate
+ON RIDE(orderDate);
+
+EXPLAIN ANALYZE
+SELECT rideId, orderDate, startTime, endTime, status, paymentMethod
+FROM RIDE
+WHERE orderDate BETWEEN DATE '2026-03-01' AND DATE '2026-03-31'
+ORDER BY orderDate, startTime;
+
+<img width="363" height="35" alt="image" src="https://github.com/user-attachments/assets/0fe93b7f-bd47-4d36-ba69-c2645682ab7a" />
+
+
+
 
 
 
