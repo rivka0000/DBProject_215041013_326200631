@@ -912,6 +912,52 @@ ORDER BY orderDate, startTime;
 
 <img width="363" height="35" alt="image" src="https://github.com/user-attachments/assets/0fe93b7f-bd47-4d36-ba69-c2645682ab7a" />
 
+אינדקס 2: idx_ride_driver_date
+
+האינדקס נוסף על העמודות licenseNumber, orderDate בטבלת RIDE.
+המוטיבציה היא שבמסך פרטי נהג נרצה להציג את היסטוריית הנסיעות של נהג מסוים לפי תאריכים. לכן האינדקס משלב גם את מספר הרישיון של הנהג וגם את תאריך הנסיעה.
+התועלת היא שיפור בביצוע שאילתות שמסננות קודם לפי נהג ולאחר מכן לפי טווח תאריכים.
+-- =====================================================
+-- Index 2: חיפוש נסיעות לפי נהג ותאריך
+-- מתאים למסך פרטי נהג והיסטוריית נסיעות
+-- =====================================================
+
+DROP INDEX IF EXISTS idx_ride_driver_date;
+
+EXPLAIN ANALYZE
+SELECT rideId, licenseNumber, orderDate, startTime, endTime, status
+FROM RIDE
+WHERE licenseNumber = (
+    SELECT licenseNumber
+    FROM RIDE
+    GROUP BY licenseNumber
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+)
+AND orderDate BETWEEN DATE '2025-01-01' AND DATE '2025-12-31'
+ORDER BY orderDate;
+
+<img width="332" height="49" alt="image" src="https://github.com/user-attachments/assets/6bc7c0b2-9e05-497b-b457-4cd72f9e06ac" />
+
+CREATE INDEX idx_ride_driver_date
+ON RIDE(licenseNumber, orderDate);
+
+EXPLAIN ANALYZE
+SELECT rideId, licenseNumber, orderDate, startTime, endTime, status
+FROM RIDE
+WHERE licenseNumber = (
+    SELECT licenseNumber
+    FROM RIDE
+    GROUP BY licenseNumber
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+)
+AND orderDate BETWEEN DATE '2025-01-01' AND DATE '2025-12-31'
+ORDER BY orderDate;
+<img width="312" height="37" alt="image" src="https://github.com/user-attachments/assets/b0057f63-f467-4443-be4e-bb61e65b8781" />
+
+
+
 
 
 
