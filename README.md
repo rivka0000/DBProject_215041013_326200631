@@ -712,3 +712,50 @@ WHERE endTime IS NOT NULL
 <img width="1348" height="800" alt="image" src="https://github.com/user-attachments/assets/9f797e96-a5f9-44d5-b5d2-034b858ea265" />
 
 
+rollback  ו commit: 
+עדכון בסיב הנתונים+rollback:
+BEGIN;
+
+-- מצב בסיס הנתונים לפני העדכון
+SELECT licenseNumber, fullName, phoneNumber, status
+FROM DRIVER
+ORDER BY licenseNumber
+LIMIT 5;
+
+-- עדכון זמני
+UPDATE DRIVER
+SET status = 'inactive'
+WHERE licenseNumber = (
+    SELECT licenseNumber
+    FROM DRIVER
+    ORDER BY licenseNumber
+    LIMIT 1
+);
+
+-- מצב בסיס הנתונים אחרי העדכון
+SELECT licenseNumber, fullName, phoneNumber, status
+FROM DRIVER
+ORDER BY licenseNumber
+LIMIT 5;
+
+-- ביטול השינוי
+ROLLBACK;
+
+-- מצב בסיס הנתונים אחרי rollback
+-- כאן אמורים לראות שהסטטוס חזר למה שהיה בהתחלה
+SELECT licenseNumber, fullName, phoneNumber, status
+FROM DRIVER
+ORDER BY licenseNumber
+LIMIT 5;
+צילומים נדרשים:
+צילום מצב בסיס הנתונים לפני העדכון
+צילום מסך בסיס הנתונים לאחר העדכון
+צילום מצב בסיס הנתונים שחזר לקדמותו לאחר פקודת הrollback
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/846c0bac-56c0-43be-abc2-81e57b525ea5" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3ebd93c-ad52-494d-92f7-5140517d743b" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2ba1de3e-da15-48d5-a0f3-ff5b7d5dbe48" />
+
+
+
+
+
