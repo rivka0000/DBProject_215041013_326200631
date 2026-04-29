@@ -3,36 +3,40 @@
    ========================================= */
 
 
-/* 1. Delete old cancelled rides from previous years
-   מוחק נסיעות שבוטלו ושייכות לשנים קודמות בלבד.
-   מתאים לניקוי היסטוריה לא רלוונטית ממערכת ניהול ההסעות.
-   יש כאן שימוש בפירוק תאריך לפי שנה. */
+/* 1. Delete cancelled rides
+   מוחק נסיעות שבוטלו (Cancelled).
+   מתאים לניקוי נסיעות שאינן רלוונטיות יותר למסך ניהול ההסעות.
+   חשוב: הערך בטבלה הוא Cancelled עם אות גדולה. */
 DELETE FROM RIDE
-WHERE status = 'cancelled'
-  AND EXTRACT(YEAR FROM orderDate) < EXTRACT(YEAR FROM CURRENT_DATE);
+WHERE status = 'Cancelled';
 
 
-/* 2. Delete old maintenance records for vehicles that are currently active
-   מוחק רשומות תחזוקה ישנות מאוד רק עבור רכבים שעדיין פעילים.
-   כלומר משאירים במערכת מידע תחזוקה עדכני, אבל מנקים היסטוריה ישנה.
-   השאילתה משתמשת ביותר מטבלה אחת: MAINTENANCE ו-VEHICLE. */
+/* 2. Delete old maintenance records for vehicles that are not active
+   מוחק רשומות תחזוקה ישנות (מעל שנתיים),
+   רק עבור רכבים שאינם פעילים כיום.
+   המטרה היא לנקות מידע תחזוקה ישן שאינו רלוונטי לרכבים שאינם בשימוש,
+   תוך שמירה על נתוני תחזוקה של רכבים פעילים.
+
+   השאילתא משלבת בין MAINTENANCE ל-VEHICLE באמצעות EXISTS,
+   ומשתמשת בתנאי על שדה התאריך maintenanceDate. */
 DELETE FROM MAINTENANCE m
-WHERE EXTRACT(YEAR FROM m.maintenanceDate) < EXTRACT(YEAR FROM CURRENT_DATE) - 3
+WHERE m.maintenanceDate < CURRENT_DATE - INTERVAL '2 years'
   AND EXISTS (
       SELECT 1
       FROM VEHICLE v
       WHERE v.plateNumber = m.plateNumber
-        AND v.status = 'active'
+        AND v.status <> 'Active'
   );
 
 
 /* 3. Delete inactive drivers that were never assigned to any ride
-   מוחק נהגים לא פעילים שאין להם אף נסיעה במערכת.
-   זה הגיוני עסקית כי נהג בלי היסטוריית נסיעות וסטטוס inactive
-   לא תורם למסכי הניהול של החברה.
-   משתמשים בתת שאילתה כדי לבדוק שאין לו נסיעות בטבלת RIDE. */
+   מוחק נהגים שאינם פעילים ואין להם אף נסיעה במערכת.
+   מבחינה עסקית, נהגים כאלה אינם רלוונטיים למסך ניהול הנהגים.
+
+   השאילתא משתמשת בתת־שאילתא עם NOT EXISTS כדי לוודא
+   שלנהג אין אף נסיעה בטבלת RIDE. */
 DELETE FROM DRIVER d
-WHERE d.status = 'inactive'
+WHERE d.status <> 'Active'
   AND NOT EXISTS (
       SELECT 1
       FROM RIDE r
