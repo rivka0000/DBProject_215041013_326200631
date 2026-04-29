@@ -542,12 +542,13 @@ WHERE status = 'Cancelled'
 צילומים נדרשים
 
 צילום מצב לפני – הרצת SELECT עם אותם תנאים
+צילום הרצה – ה־DELETEכולל rows affected
+צילום מצב אחרי – הרצת SELECT שוב להראות שהרשומות נמחקו
+
 
 <img width="1168" height="433" alt="image" src="https://github.com/user-attachments/assets/a8bdb7f8-7346-4ddd-817f-b7fa78242485" />
-צילום הרצה – ה־DELETEכולל rows affected
 
 <img width="946" height="388" alt="image" src="https://github.com/user-attachments/assets/10b4c5a4-0d34-4cf2-9684-3c142a80198e" />
-צילום מצב אחרי – הרצת SELECT שוב להראות שהרשומות נמחקו
 
 <img width="1133" height="501" alt="image" src="https://github.com/user-attachments/assets/b31af61d-acb1-42fa-b565-bf6a372df3c2" />
 
@@ -752,10 +753,13 @@ ORDER BY licenseNumber
 LIMIT 5;
 צילומים נדרשים:
 צילום מצב בסיס הנתונים לפני העדכון.
-צילום מסך בסיס הנתונים לאחר העדכון.
-צילום מצב בסיס הנתונים שחזר לקדמותו לאחר פקודת הrollback.
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/846c0bac-56c0-43be-abc2-81e57b525ea5" />
+צילום מסך בסיס הנתונים לאחר העדכון.
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3ebd93c-ad52-494d-92f7-5140517d743b" />
+צילום מצב בסיס הנתונים שחזר לקדמותו לאחר פקודת הrollback.
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2ba1de3e-da15-48d5-a0f3-ff5b7d5dbe48" />
 
 
