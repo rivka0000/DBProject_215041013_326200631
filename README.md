@@ -956,6 +956,49 @@ AND orderDate BETWEEN DATE '2025-01-01' AND DATE '2025-12-31'
 ORDER BY orderDate;
 <img width="312" height="37" alt="image" src="https://github.com/user-attachments/assets/b0057f63-f467-4443-be4e-bb61e65b8781" />
 
+אינדקס 3: idx_maintenance_vehicle_date
+
+האינדקס נוסף על העמודות plateNumber, maintenanceDate בטבלת MAINTENANCE.
+המוטיבציה היא שבמסך פרטי רכב נרצה לראות את כל היסטוריית הטיפולים של רכב מסוים, בדרך כלל לפי תאריך.
+מכיוון שטבלת התחזוקה מכילה 20,000 רשומות, האינדקס עוזר לשלוף מהר יותר את הטיפולים של רכב מסוים.
+-- =====================================================
+-- Index 3: חיפוש טיפולים לפי רכב ותאריך
+-- מתאים למסך רכב והיסטוריית טיפולים
+-- =====================================================
+
+DROP INDEX IF EXISTS idx_maintenance_vehicle_date;
+
+EXPLAIN ANALYZE
+SELECT plateNumber, maintenanceDate, MaintenanceType, Cost, Description
+FROM MAINTENANCE
+WHERE plateNumber = (
+    SELECT plateNumber
+    FROM MAINTENANCE
+    GROUP BY plateNumber
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+)
+ORDER BY maintenanceDate DESC;
+<img width="370" height="33" alt="image" src="https://github.com/user-attachments/assets/d179cfad-1a21-4790-9f69-1944fb8c91dd" />
+
+CREATE INDEX idx_maintenance_vehicle_date
+ON MAINTENANCE(plateNumber, maintenanceDate);
+
+EXPLAIN ANALYZE
+SELECT plateNumber, maintenanceDate, MaintenanceType, Cost, Description
+FROM MAINTENANCE
+WHERE plateNumber = (
+    SELECT plateNumber
+    FROM MAINTENANCE
+    GROUP BY plateNumber
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+)
+ORDER BY maintenanceDate DESC;
+<img width="323" height="31" alt="image" src="https://github.com/user-attachments/assets/b3ec90cc-4bd6-46dc-88fc-ba2b9b37406e" />
+
+
+
 
 
 
