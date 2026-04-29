@@ -834,7 +834,7 @@ CHECK (capacity > 0);
 INSERT INTO VEHICLE (plateNumber, model, capacity, carColor, year, status)
 VALUES ('TEST001', 'Test Model', 0, 'White', 2020, 'Available');
 
-הסבר:   האילוץ מוודא שלא ניתן להכניס רכב עם קיבולת לא תקינה, כלומר קיבולת אפס או מספר שלילי.
+תיאור האילוץ:   האילוץ מוודא שלא ניתן להכניס רכב עם קיבולת לא תקינה, כלומר קיבולת אפס או מספר שלילי.
 
 צילום שגיאה ךאחר ניסיון הכנסת ערך סותר:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b863535d-68f9-4c81-8881-6d052807cf49" />
@@ -854,10 +854,30 @@ INSERT INTO ROUTE (origin, destination, distanceKm, estimatedTravelTime)
 VALUES ('Test Origin', 'Test Destination', 800, 60);
 
 
-הסבר:   האילוץ מווודא שמרחק הנסיעה חיובי ואינו עולה על 500 ק"מ.
+תיאור האילוץ:   האילוץ מווודא שמרחק הנסיעה חיובי ואינו עולה על 500 ק"מ.
 בעת הוספת האילוץ התברר כי קיימים נתונים בטבלה שאינם עומדים בתנאי האילוץ. לכן נעשה שימוש באפשרות NOT VALID, שמאפשרת להוסיף את האילוץ מבלי לבדוק את הנתונים הקיימים, אך עדיין לאכוף אותו על נתונים חדשים.
 צילום שגיאה ךאחר ניסיון הכנסת ערך סותר:
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/edb18a9b-634c-437f-a10b-c2527b618afd" />
+
+אילוץ שלישי:
+-- =====================================================
+-- Constraint 3:
+-- זמן נסיעה משוער חייב להיות גדול מ-0
+-- =====================================================
+
+ALTER TABLE ROUTE
+ADD CONSTRAINT chk_route_time_positive
+CHECK (estimatedTravelTime > 0);
+
+-- בדיקה - אמור להיכשל
+INSERT INTO ROUTE (origin, destination, distanceKm, estimatedTravelTime)
+VALUES ('Test Origin2', 'Test Destination2', 50, 0);
+
+תיאור האילוץ:   האילוץ מוודא שזמן הנסיעה המשוער גדול מ־0.
+
+צילום שגיאה ךאחר ניסיון הכנסת ערך סותר:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/573d24fa-6a1a-4f13-824a-e152e9d3874d" />
 
 
 
