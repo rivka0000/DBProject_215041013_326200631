@@ -107,31 +107,37 @@ ORDER BY totalRides DESC;
 
 
 /* =========================================================
-   QUERY 2B
+   QUERY 2B - corrected
    Driver Directory / Dashboard
-   Drivers with the maximum number of rides in a given year
-   MAX subquery version
+   Drivers with number of rides in a given year
+   Subquery version
+
+   Difference from 2A:
+   2A calculates the ride count directly with JOIN + GROUP BY.
+   2B first calculates the ride count per driver inside a subquery,
+   and only then joins the result to the DRIVER table.
+
+   Result:
+   Same meaning as 2A, all drivers who had rides in 2025,
+   ordered from highest number of rides to lowest.
    ========================================================= */
 SELECT 
     D.licenseNumber,
     D.fullName,
     D.phoneNumber,
     D.status,
-    COUNT(R.rideId) AS totalRides
+    DriverCounts.totalRides
 FROM DRIVER D
-JOIN RIDE R ON D.licenseNumber = R.licenseNumber
-WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-GROUP BY D.licenseNumber, D.fullName, D.phoneNumber, D.status
-HAVING COUNT(R.rideId) = (
-    SELECT MAX(driverRideCount)
-    FROM (
-        SELECT COUNT(R2.rideId) AS driverRideCount
-        FROM RIDE R2
-        WHERE EXTRACT(YEAR FROM R2.orderDate) = 2025
-        GROUP BY R2.licenseNumber
-    ) AS DriverCounts
-)
-ORDER BY D.licenseNumber;
+JOIN (
+    SELECT 
+        R.licenseNumber,
+        COUNT(R.rideId) AS totalRides
+    FROM RIDE R
+    WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
+    GROUP BY R.licenseNumber
+) AS DriverCounts
+ON D.licenseNumber = DriverCounts.licenseNumber
+ORDER BY DriverCounts.totalRides DESC;
 
 
 /* =========================================================
@@ -155,34 +161,38 @@ ORDER BY totalRides DESC;
 
 
 /* =========================================================
-   QUERY 3B
+   QUERY 3B - corrected
    Customers Directory
-   Customers with the maximum number of rides in a given month/year
-   MAX subquery version
+   Customers with number of rides in a given month and year
+   Subquery version
+
+   Difference from 3A:
+   3A calculates the ride count directly with JOIN + GROUP BY.
+   3B first calculates the ride count per customer inside a subquery,
+   and only then joins the result to the CUSTOMER table.
+
+   Result:
+   Same meaning as 3A, all customers who had rides in June 2025,
+   ordered from highest number of rides to lowest.
    ========================================================= */
 SELECT 
     C.id,
     C.fullName,
     C.phoneNumber,
     C.email,
-    COUNT(R.rideId) AS totalRides
+    CustomerCounts.totalRides
 FROM CUSTOMER C
-JOIN RIDE R ON C.id = R.id
-WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-  AND EXTRACT(MONTH FROM R.orderDate) = 6
-GROUP BY C.id, C.fullName, C.phoneNumber, C.email
-HAVING COUNT(R.rideId) = (
-    SELECT MAX(customerRideCount)
-    FROM (
-        SELECT COUNT(R2.rideId) AS customerRideCount
-        FROM RIDE R2
-        WHERE EXTRACT(YEAR FROM R2.orderDate) = 2025
-          AND EXTRACT(MONTH FROM R2.orderDate) = 6
-        GROUP BY R2.id
-    ) AS CustomerCounts
-)
-ORDER BY C.id;
-
+JOIN (
+    SELECT 
+        R.id,
+        COUNT(R.rideId) AS totalRides
+    FROM RIDE R
+    WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
+      AND EXTRACT(MONTH FROM R.orderDate) = 6
+    GROUP BY R.id
+) AS CustomerCounts
+ON C.id = CustomerCounts.id
+ORDER BY CustomerCounts.totalRides DESC;
 
 /* =========================================================
    QUERY 4A
