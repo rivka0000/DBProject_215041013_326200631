@@ -763,6 +763,84 @@ LIMIT 5;
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2ba1de3e-da15-48d5-a0f3-ff5b7d5dbe48" />
 
 
+עדכון בסיב הנתונים+commit:
 
+-- מתחילים טרנזקציה.
+-- השינויים עדיין לא נשמרים סופית עד COMMIT.
+BEGIN;
+
+-- -------------------------
+-- שלב 1: מצב לפני העדכון
+-- מציגים רכבים שיש להם רשומות תחזוקה,
+-- כדי לראות מה הסטטוס שלהם לפני השינוי.
+-- -------------------------
+SELECT v.plateNumber, v.model, v.status,
+       m.maintenanceDate, m.description, m.cost
+FROM VEHICLE v
+JOIN MAINTENANCE m
+  ON v.plateNumber = m.plateNumber
+WHERE m.cost <5000
+ORDER BY m.cost DESC
+LIMIT 5;
+
+
+-- -------------------------
+-- שלב 2: עדכון הנתונים
+-- לוגיקה עסקית:
+-- אם לרכב יש טיפול יקר, נרצה לסמן אותו כזקוק לתחזוקה.
+-- לכן נשנה את הסטטוס שלו ל-Maintenance.
+-- -------------------------
+UPDATE VEHICLE
+SET status = 'Maintenance'
+WHERE plateNumber IN (
+    SELECT plateNumber
+    FROM MAINTENANCE
+    WHERE cost >= 1000
+)
+AND status <> 'Maintenance';
+
+
+-- -------------------------
+-- שלב 3: מצב אחרי העדכון, לפני COMMIT
+-- כאן רואים שהסטטוס השתנה,
+-- אבל השינוי עדיין בתוך הטרנזקציה.
+-- -------------------------
+SELECT v.plateNumber, v.model, v.status,
+       m.maintenanceDate, m.description, m.cost
+FROM VEHICLE v
+JOIN MAINTENANCE m
+  ON v.plateNumber = m.plateNumber
+WHERE m.cost >= 1000
+ORDER BY m.cost DESC
+LIMIT 5;
+
+
+-- -------------------------
+-- שלב 4: שמירת השינוי לצמיתות
+-- אחרי COMMIT השינוי נשמר בבסיס הנתונים.
+-- -------------------------
+COMMIT;
+
+
+-- -------------------------
+-- שלב 5: בדיקה אחרי COMMIT
+-- אם התוצאה זהה לשלב 3,
+-- זה מוכיח שהשינוי נשמר.
+-- -------------------------
+SELECT v.plateNumber, v.model, v.status,
+       m.maintenanceDate, m.description, m.cost
+FROM VEHICLE v
+JOIN MAINTENANCE m
+  ON v.plateNumber = m.plateNumber
+WHERE m.cost >= 1000
+ORDER BY m.cost DESC
+LIMIT 5;
+
+
+
+צילומים נדרשים:
+צילום מצב בסיס הנתונים לפני העדכון:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/87961c9a-9dfd-4ce7-a9c3-c99881476673" />
+צילום מסך בסיס הנתונים לאחר העדכון:
 
 
