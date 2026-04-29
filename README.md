@@ -765,82 +765,65 @@ LIMIT 5;
 
 עדכון בסיב הנתונים+commit:
 
--- מתחילים טרנזקציה.
--- השינויים עדיין לא נשמרים סופית עד COMMIT.
+-- =========================
+-- Commit example - שינוי צבע לרכבי Toyota Corolla בלבד
+-- =========================
+
+-- התחלת טרנזקציה
 BEGIN;
 
 -- -------------------------
 -- שלב 1: מצב לפני העדכון
--- מציגים רכבים שיש להם רשומות תחזוקה,
--- כדי לראות מה הסטטוס שלהם לפני השינוי.
+-- מציגים רק רכבים מסוג Toyota Corolla
 -- -------------------------
-SELECT v.plateNumber, v.model, v.status,
-       m.maintenanceDate, m.description, m.cost
-FROM VEHICLE v
-JOIN MAINTENANCE m
-  ON v.plateNumber = m.plateNumber
-WHERE m.cost <5000
-ORDER BY m.cost DESC
-LIMIT 5;
+SELECT plateNumber, model, carColor
+FROM VEHICLE
+WHERE model = 'Toyota Corolla';
 
 
 -- -------------------------
 -- שלב 2: עדכון הנתונים
--- לוגיקה עסקית:
--- אם לרכב יש טיפול יקר, נרצה לסמן אותו כזקוק לתחזוקה.
--- לכן נשנה את הסטטוס שלו ל-Maintenance.
+-- משנים צבע ל-Black רק לרכבים האלה
 -- -------------------------
 UPDATE VEHICLE
-SET status = 'Maintenance'
-WHERE plateNumber IN (
-    SELECT plateNumber
-    FROM MAINTENANCE
-    WHERE cost >= 1000
-)
-AND status <> 'Maintenance';
+SET carColor = 'Black'
+WHERE model = 'Toyota Corolla';
 
 
 -- -------------------------
--- שלב 3: מצב אחרי העדכון, לפני COMMIT
--- כאן רואים שהסטטוס השתנה,
--- אבל השינוי עדיין בתוך הטרנזקציה.
+-- שלב 3: מצב אחרי העדכון (לפני COMMIT)
+-- אמורים לראות שינוי בצבע
 -- -------------------------
-SELECT v.plateNumber, v.model, v.status,
-       m.maintenanceDate, m.description, m.cost
-FROM VEHICLE v
-JOIN MAINTENANCE m
-  ON v.plateNumber = m.plateNumber
-WHERE m.cost >= 1000
-ORDER BY m.cost DESC
-LIMIT 5;
+SELECT plateNumber, model, carColor
+FROM VEHICLE
+WHERE model = 'Toyota Corolla';
 
 
 -- -------------------------
 -- שלב 4: שמירת השינוי לצמיתות
--- אחרי COMMIT השינוי נשמר בבסיס הנתונים.
 -- -------------------------
 COMMIT;
 
 
 -- -------------------------
 -- שלב 5: בדיקה אחרי COMMIT
--- אם התוצאה זהה לשלב 3,
--- זה מוכיח שהשינוי נשמר.
+-- הצבע אמור להישאר Black
 -- -------------------------
-SELECT v.plateNumber, v.model, v.status,
-       m.maintenanceDate, m.description, m.cost
-FROM VEHICLE v
-JOIN MAINTENANCE m
-  ON v.plateNumber = m.plateNumber
-WHERE m.cost >= 1000
-ORDER BY m.cost DESC
-LIMIT 5;
-
+SELECT plateNumber, model, carColor
+FROM VEHICLE
+WHERE model = 'Toyota Corolla';
 
 
 צילומים נדרשים:
 צילום מצב בסיס הנתונים לפני העדכון:
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/87961c9a-9dfd-4ce7-a9c3-c99881476673" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/023de181-2e57-4f6c-b1b4-90077b25aabc" />
 צילום מסך בסיס הנתונים לאחר העדכון:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b290244e-de82-48fa-bbad-74eedc5209a9" />
+צילום מצב בסיס הנתונים לאחר פקודת הcommit שנשאר כפי שהיה:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ad6375d9-65e4-4579-b208-fb808748c521" />
+
+
+
+
 
 
