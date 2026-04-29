@@ -618,3 +618,97 @@ WHERE d.status <> 'Active'
 <img width="1307" height="501" alt="image" src="https://github.com/user-attachments/assets/63e9f2b0-3329-401b-b993-0868a8788549" />
 <img width="1306" height="701" alt="image" src="https://github.com/user-attachments/assets/b4eda5f3-895c-4622-a1ce-2f86c638411a" />
 <img width="1304" height="492" alt="image" src="https://github.com/user-attachments/assets/1ab4ab4f-d7ba-4ede-9839-860413c56f1c" />
+
+
+שאילתות UPDATE 
+UPDATE 1 —  עדכון סטטוס רכב ל־ Maintenance
+
+תיאור השאילתא
+שאילתא זו מעדכנת את סטטוס הרכב ל־Maintenance עבור רכבים שסך עלויות התחזוקה שלהם בשנה הנוכחית גבוה מ־5000.
+השאילתא מתאימה למסך Fleet & Maintenance, משום שהיא עוזרת לזהות רכבים שדורשים תשומת לב תחזוקתית מיוחדת.
+השאילתא אינה טריוויאלית משום שהיא משתמשת בטבלת MAINTENANCE כדי לחשב את סכום עלויות התחזוקה לכל רכב, מבצעת GROUP BY ו־HAVING, ולאחר מכן מעדכנת את טבלת VEHICLE.
+
+קוד השאילתא
+
+UPDATE VEHICLE
+SET status = 'Maintenance'
+WHERE plateNumber IN (
+    SELECT m.plateNumber
+    FROM MAINTENANCE m
+    WHERE EXTRACT(YEAR FROM m.maintenanceDate) = EXTRACT(YEAR FROM CURRENT_DATE)
+    GROUP BY m.plateNumber
+    HAVING SUM(m.Cost) > 5000
+);
+
+
+צילום מצב לפני – SELECT שמציג רכבים שסך עלויות התחזוקה שלהם בשנה הנוכחית גבוה מ־5000 ואת הסטטוס הנוכחי שלהם.
+צילום הרצה – הרצת פקודת UPDATE והצגת מספר הרשומות שהתעדכנו.
+צילום מצב אחרי – SELECT שמציג שאותם רכבים עודכנו לסטטוס Maintenance.
+
+
+
+<img width="1383" height="808" alt="image" src="https://github.com/user-attachments/assets/8b3d9dd1-e486-4f14-ba1b-c5ebe3f1a592" />
+<img width="1304" height="811" alt="image" src="https://github.com/user-attachments/assets/c321de8a-ba94-48eb-9eeb-00ba848b1a39" />
+<img width="1334" height="771" alt="image" src="https://github.com/user-attachments/assets/fca13a08-fc76-460b-9dec-aef48ba45c97" />
+
+
+
+
+UPDATE 2 — עדכון נהגים ל־ Busy
+תיאור השאילתא
+
+שאילתא זו מעדכנת את סטטוס הנהגים ל־Busy עבור נהגים שיש להם נסיעות בתאריך הנוכחי.
+השאילתא מתאימה למסך ניהול הנהגים, כדי לזהות אילו נהגים פעילים ומשובצים לנסיעות היום.
+
+השאילתא משתמשת בפירוק תאריך באמצעות EXTRACT ובתת־שאילתא כדי לזהות נהגים מתוך טבלת RIDE, ולכן אינה טריוויאלית.
+
+קוד השאילתא
+UPDATE DRIVER
+SET status = 'Busy'
+WHERE licenseNumber IN (
+    SELECT r.licenseNumber
+    FROM RIDE r
+    WHERE EXTRACT(YEAR FROM r.orderDate) = EXTRACT(YEAR FROM CURRENT_DATE)
+      AND EXTRACT(MONTH FROM r.orderDate) = EXTRACT(MONTH FROM CURRENT_DATE)
+      AND EXTRACT(DAY FROM r.orderDate) = EXTRACT(DAY FROM CURRENT_DATE)
+);
+צילום מצב לפני – SELECT שמראה את הנהגים שיש להם נסיעות היום ואת הסטטוס הנוכחי שלהם (לפני העדכון).
+צילום הרצה – ה־UPDATE ומספר הרשומות שהתעדכנו (למשל UPDATE 16).
+צילום מצב אחרי – SELECT שוב שמראה שהסטטוס של אותם נהגים עודכן ל־Busy.
+<img width="1192" height="864" alt="image" src="https://github.com/user-attachments/assets/fc361990-3d74-456b-8094-e06c00c835df" />
+<img width="1005" height="672" alt="image" src="https://github.com/user-attachments/assets/41a30a1a-4130-492e-842d-43fb24f8abdf" />
+<img width="1511" height="797" alt="image" src="https://github.com/user-attachments/assets/87937f30-2e2d-414e-b87d-e46c50330783" />
+
+
+
+
+UPDATE 3 — עדכון נסיעות ארוכות ל־Long Completed
+
+תיאור השאילתא
+שאילתא זו מעדכנת נסיעות שהסתיימו לסטטוס Long Completed, אם המסלול שלהן ארוך מ־100 ק״מ.
+השאילתא מתאימה למסך דוחות נסיעות או למסך ניהול נסיעות, כדי לזהות ולסמן נסיעות ארוכות שבוצעו.
+השאילתא אינה טריוויאלית משום שהיא משלבת בין הטבלאות RIDE ו־ROUTE, ומשתמשת בתנאי על מרחק המסלול (distanceKm), וכן בתנאי על סטטוס ותאריך הסיום של הנסיעה.
+
+קוד השאילתא
+
+UPDATE RIDE
+SET status = 'Long Completed'
+WHERE endTime IS NOT NULL
+  AND status = 'Completed'
+  AND EXISTS (
+      SELECT 1
+      FROM ROUTE ro
+      WHERE ro.origin = RIDE.origin
+        AND ro.destination = RIDE.destination
+        AND ro.distanceKm > 100
+  );
+
+צילומים נדרשים
+צילום מצב לפני – SELECT שמראה נסיעות שהסתיימו (Completed) והמסלול שלהן ארוך מ־100 ק״מ.
+צילום הרצה – ה־UPDATE ומספר הרשומות שהתעדכנו.
+צילום מצב אחרי – SELECT שוב שמראה שהסטטוס של אותן נסיעות עודכן ל־Long Completed.
+<img width="1348" height="800" alt="image" src="https://github.com/user-attachments/assets/34b77691-6579-4368-8bf3-f8e27fd32f08" />
+<img width="1137" height="727" alt="image" src="https://github.com/user-attachments/assets/31967fde-e918-4fbc-a39e-d104bb08637f" />
+<img width="1348" height="800" alt="image" src="https://github.com/user-attachments/assets/9f797e96-a5f9-44d5-b5d2-034b858ea265" />
+
+
