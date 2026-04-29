@@ -707,7 +707,7 @@ WHERE endTime IS NOT NULL
 צילום מצב לפני – SELECT שמראה נסיעות שהסתיימו (Completed) והמסלול שלהן ארוך מ־100 ק״מ.
 צילום הרצה – ה־UPDATE ומספר הרשומות שהתעדכנו.
 צילום מצב אחרי – SELECT שוב שמראה שהסטטוס של אותן נסיעות עודכן ל־Long Completed.
-<img width="1348" height="800" alt="image" src="https://github.com/user-attachments/assets/34b77691-6579-4368-8bf3-f8e27fd32f08" />
+<img width="1229" height="713" alt="image" src="https://github.com/user-attachments/assets/c0ff73bb-54e5-4607-b86d-aedbc5eea6e1" />
 <img width="1137" height="727" alt="image" src="https://github.com/user-attachments/assets/31967fde-e918-4fbc-a39e-d104bb08637f" />
 <img width="1348" height="800" alt="image" src="https://github.com/user-attachments/assets/9f797e96-a5f9-44d5-b5d2-034b858ea265" />
 
