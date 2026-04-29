@@ -273,36 +273,35 @@ ORDER BY totalRidesOnRoute DESC, RT.origin, RT.destination;
 
 
 /* =========================================================
-   QUERY 7
-   Track & Maintenance Screen
-   Vehicles with many rides but no maintenance in the last 6 months
+   QUERY 7 - Fleet & Maintenance Screen
+   Vehicles with activity and last maintenance
    ========================================================= */
 SELECT 
     V.plateNumber,
     V.model,
+    V.carColor,
+    V.year,
+    V.capacity,
     V.status,
     COUNT(R.rideId) AS totalRides,
     MAX(M.maintenanceDate) AS lastMaintenanceDate
 FROM VEHICLE V
-JOIN RIDE R ON V.plateNumber = R.plateNumber
+LEFT JOIN RIDE R ON V.plateNumber = R.plateNumber
 LEFT JOIN MAINTENANCE M ON V.plateNumber = M.plateNumber
-GROUP BY V.plateNumber, V.model, V.status
-HAVING COUNT(R.rideId) >= 3
-   AND (
-       MAX(M.maintenanceDate) IS NULL
-       OR MAX(M.maintenanceDate) < CURRENT_DATE - INTERVAL '6 months'
-   )
-ORDER BY totalRides DESC, V.plateNumber;
+GROUP BY 
+    V.plateNumber, V.model, V.carColor, V.year, V.capacity, V.status
+ORDER BY totalRides DESC;
 
 
 /* =========================================================
-   QUERY 8
+   QUERY 8 - 
    Customer Details Screen
-   Ride history of a specific customer
+   Ride history of a specific existing customer
    ========================================================= */
 SELECT 
     C.id AS customerId,
     C.fullName AS customerName,
+    C.phoneNumber AS customerPhone,
     R.rideId,
     R.orderDate,
     EXTRACT(DAY FROM R.orderDate) AS rideDay,
@@ -321,5 +320,5 @@ FROM CUSTOMER C
 JOIN RIDE R ON C.id = R.id
 JOIN DRIVER D ON R.licenseNumber = D.licenseNumber
 JOIN VEHICLE V ON R.plateNumber = V.plateNumber
-WHERE C.id = 1001
+WHERE C.id = 1
 ORDER BY R.orderDate DESC, R.startTime DESC;
