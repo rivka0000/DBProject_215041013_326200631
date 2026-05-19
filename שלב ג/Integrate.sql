@@ -5,7 +5,7 @@ DROP COLUMN starttime,
 DROP COLUMN endtime,
 DROP COLUMN paymentmethod;
 
--- Display all column names in the ride table to verify the updated structure
+-- Display all column namedocker exec -it PostgreSQL_DB psql -U tirtsa -d restore_final_db -c "\dt"s in the ride table to verify the updated structure
 SELECT column_name
 FROM information_schema.columns
 WHERE table_name = 'ride';
