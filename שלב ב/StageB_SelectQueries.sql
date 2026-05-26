@@ -1,7 +1,6 @@
 /* =========================================================
    StageB_SelectQueries.sql
-   Advanced SELECT queries for Stage B
-   Transportation Management System
+   Updated for Integrated Database
    ========================================================= */
 
 
@@ -9,316 +8,314 @@
    QUERY 1A
    Ride Management Screen
    All rides with full details - JOIN version
+
+   מטרת השאילתה:
+   להציג את כל פרטי הנסיעות במערכת המשולבת,
+   כולל:
+   - פרטי נסיעה
+   - פרטי לקוח
+   - פרטי נהג
+   - פרטי רכב
+   - פרטי מסלול
+   - תאריך ושעות הסיור
+
+   לאחר האינטגרציה:
+   - תאריך ושעות נמצאים ב-tourinstance
+   - לקוחות נמצאים דרך bookings
    ========================================================= */
+
 SELECT 
-    R.rideId,
-    R.orderDate,
-    R.startTime,
-    R.endTime,
+    -- Ride information
+    R.rideid,
     R.status AS rideStatus,
-    R.paymentMethod,
-    C.id AS customerId,
-    C.fullName AS customerName,
-    C.phoneNumber AS customerPhone,
-    D.licenseNumber,
-    D.fullName AS driverName,
-    D.phoneNumber AS driverPhone,
-    V.plateNumber,
+
+    -- Booking information
+    B.b_date,
+
+    -- Tour instance information
+    TI.start_time,
+    TI.end_time,
+
+    -- Customer information
+    C.c_id AS customerId,
+    C.c_first_name,
+    C.c_last_name,
+    C.c_phone,
+
+    -- Driver information
+    D.licensenumber,
+    D.fullname AS driverName,
+    D.phonenumber AS driverPhone,
+
+    -- Vehicle information
+    V.platenumber,
     V.model AS vehicleModel,
-    V.carColor,
+    V.carcolor,
     V.status AS vehicleStatus,
+
+    -- Route information
     RT.origin,
     RT.destination,
-    RT.distanceKm,
-    RT.estimatedTravelTime
-FROM RIDE R
-JOIN CUSTOMER C ON R.id = C.id
-JOIN DRIVER D ON R.licenseNumber = D.licenseNumber
-JOIN VEHICLE V ON R.plateNumber = V.plateNumber
-JOIN ROUTE RT ON R.origin = RT.origin AND R.destination = RT.destination
-ORDER BY R.orderDate DESC, R.startTime DESC;
+    RT.distancekm,
+    RT.estimatedtraveltime
 
+FROM ride R
 
-/* =========================================================
-   QUERY 1B
-   Ride Management Screen
-   All rides with full details - subquery version
-   ========================================================= */
-SELECT 
-    R.rideId,
-    R.orderDate,
-    R.startTime,
-    R.endTime,
-    R.status AS rideStatus,
-    R.paymentMethod,
-    R.id AS customerId,
-    (SELECT C.fullName
-     FROM CUSTOMER C
-     WHERE C.id = R.id) AS customerName,
-    (SELECT C.phoneNumber
-     FROM CUSTOMER C
-     WHERE C.id = R.id) AS customerPhone,
-    R.licenseNumber,
-    (SELECT D.fullName
-     FROM DRIVER D
-     WHERE D.licenseNumber = R.licenseNumber) AS driverName,
-    (SELECT D.phoneNumber
-     FROM DRIVER D
-     WHERE D.licenseNumber = R.licenseNumber) AS driverPhone,
-    R.plateNumber,
-    (SELECT V.model
-     FROM VEHICLE V
-     WHERE V.plateNumber = R.plateNumber) AS vehicleModel,
-    (SELECT V.carColor
-     FROM VEHICLE V
-     WHERE V.plateNumber = R.plateNumber) AS carColor,
-    (SELECT V.status
-     FROM VEHICLE V
-     WHERE V.plateNumber = R.plateNumber) AS vehicleStatus,
-    R.origin,
-    R.destination,
-    (SELECT RT.distanceKm
-     FROM ROUTE RT
-     WHERE RT.origin = R.origin AND RT.destination = R.destination) AS distanceKm,
-    (SELECT RT.estimatedTravelTime
-     FROM ROUTE RT
-     WHERE RT.origin = R.origin AND RT.destination = R.destination) AS estimatedTravelTime
-FROM RIDE R
-ORDER BY R.orderDate DESC, R.startTime DESC;
+-- Connect ride to booking through tour instance
+JOIN bookings B
+    ON R.t_i_id = B.t_i_id
+
+-- Connect booking to customer
+JOIN customer C
+    ON B.c_id = C.c_id
+
+-- Connect ride to driver
+JOIN driver D
+    ON R.licensenumber = D.licensenumber
+
+-- Connect ride to vehicle
+JOIN vehicle V
+    ON R.platenumber = V.platenumber
+
+-- Connect ride to route
+JOIN route RT
+    ON R.origin = RT.origin
+   AND R.destination = RT.destination
+
+-- Connect ride to tour instance
+JOIN tourinstance TI
+    ON R.t_i_id = TI.t_i_id
+
+-- Display newest bookings first
+ORDER BY B.b_date DESC, TI.start_time DESC;
 
 
 /* =========================================================
    QUERY 2A
-   Driver Directory / Dashboard
-   Drivers with the highest number of rides in a given year
-   GROUP BY + ORDER BY version
+   Driver Dashboard
+
+   Drivers with highest number of rides in 2025
+
+   מטרת השאילתה:
+   להציג את הנהגים שביצעו הכי הרבה נסיעות בשנת 2025.
+
+   משתמשים ב:
+   - JOIN לחיבור נהגים ונסיעות
+   - GROUP BY לקיבוץ לפי נהג
+   - COUNT לספירת נסיעות
    ========================================================= */
+
 SELECT 
-    D.licenseNumber,
-    D.fullName,
-    D.phoneNumber,
+    -- Driver information
+    D.licensenumber,
+    D.fullname,
+    D.phonenumber,
     D.status,
-    COUNT(R.rideId) AS totalRides
-FROM DRIVER D
-JOIN RIDE R ON D.licenseNumber = R.licenseNumber
-WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-GROUP BY D.licenseNumber, D.fullName, D.phoneNumber, D.status
+
+    -- Count total rides per driver
+    COUNT(R.rideid) AS totalRides
+
+FROM driver D
+
+-- Connect driver to rides
+JOIN ride R
+    ON D.licensenumber = R.licensenumber
+
+-- Connect rides to tour instances
+-- because the date now exists in tourinstance
+JOIN tourinstance TI
+    ON R.t_i_id = TI.t_i_id
+
+-- Filter only rides from 2025
+WHERE EXTRACT(YEAR FROM TI.t_date) = 2025
+
+-- Group all rides of the same driver together
+GROUP BY
+    D.licensenumber,
+    D.fullname,
+    D.phonenumber,
+    D.status
+
+-- Show drivers with most rides first
 ORDER BY totalRides DESC;
-
-
-/* =========================================================
-   QUERY 2B - corrected
-   Driver Directory / Dashboard
-   Drivers with number of rides in a given year
-   Subquery version
-
-   Difference from 2A:
-   2A calculates the ride count directly with JOIN + GROUP BY.
-   2B first calculates the ride count per driver inside a subquery,
-   and only then joins the result to the DRIVER table.
-
-   Result:
-   Same meaning as 2A, all drivers who had rides in 2025,
-   ordered from highest number of rides to lowest.
-   ========================================================= */
-SELECT 
-    D.licenseNumber,
-    D.fullName,
-    D.phoneNumber,
-    D.status,
-    DriverCounts.totalRides
-FROM DRIVER D
-JOIN (
-    SELECT 
-        R.licenseNumber,
-        COUNT(R.rideId) AS totalRides
-    FROM RIDE R
-    WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-    GROUP BY R.licenseNumber
-) AS DriverCounts
-ON D.licenseNumber = DriverCounts.licenseNumber
-ORDER BY DriverCounts.totalRides DESC;
 
 
 /* =========================================================
    QUERY 3A
-   Customers Directory
-   Customers with the highest number of rides in a given month/year
-   GROUP BY + ORDER BY version
+   Customer Dashboard
+
+   Customers with highest number of rides
+   in June 2025
+
+   מטרת השאילתה:
+   להציג אילו לקוחות ביצעו הכי הרבה נסיעות
+   בחודש מסוים.
+
+   לאחר האינטגרציה:
+   - לקוחות מחוברים דרך bookings
+   - תאריך נמצא ב-tourinstance
    ========================================================= */
+
 SELECT 
-    C.id,
-    C.fullName,
-    C.phoneNumber,
-    C.email,
-    COUNT(R.rideId) AS totalRides
-FROM CUSTOMER C
-JOIN RIDE R ON C.id = R.id
-WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-  AND EXTRACT(MONTH FROM R.orderDate) = 6
-GROUP BY C.id, C.fullName, C.phoneNumber, C.email
+    -- Customer information
+    C.c_id,
+    C.c_first_name,
+    C.c_last_name,
+    C.c_phone,
+    C.c_email,
+
+    -- Count rides per customer
+    COUNT(R.rideid) AS totalRides
+
+FROM customer C
+
+-- Connect customer to bookings
+JOIN bookings B
+    ON C.c_id = B.c_id
+
+-- Connect bookings to rides
+JOIN ride R
+    ON B.t_i_id = R.t_i_id
+
+-- Connect rides to tour instances
+JOIN tourinstance TI
+    ON R.t_i_id = TI.t_i_id
+
+-- Filter by year and month
+WHERE EXTRACT(YEAR FROM TI.t_date) = 2025
+  AND EXTRACT(MONTH FROM TI.t_date) = 6
+
+-- Group rides by customer
+GROUP BY
+    C.c_id,
+    C.c_first_name,
+    C.c_last_name,
+    C.c_phone,
+    C.c_email
+
+-- Show customers with most rides first
 ORDER BY totalRides DESC;
 
 
 /* =========================================================
-   QUERY 3B - corrected
-   Customers Directory
-   Customers with number of rides in a given month and year
-   Subquery version
-
-   Difference from 3A:
-   3A calculates the ride count directly with JOIN + GROUP BY.
-   3B first calculates the ride count per customer inside a subquery,
-   and only then joins the result to the CUSTOMER table.
-
-   Result:
-   Same meaning as 3A, all customers who had rides in June 2025,
-   ordered from highest number of rides to lowest.
-   ========================================================= */
-SELECT 
-    C.id,
-    C.fullName,
-    C.phoneNumber,
-    C.email,
-    CustomerCounts.totalRides
-FROM CUSTOMER C
-JOIN (
-    SELECT 
-        R.id,
-        COUNT(R.rideId) AS totalRides
-    FROM RIDE R
-    WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-      AND EXTRACT(MONTH FROM R.orderDate) = 6
-    GROUP BY R.id
-) AS CustomerCounts
-ON C.id = CustomerCounts.id
-ORDER BY CustomerCounts.totalRides DESC;
-
-/* =========================================================
    QUERY 4A
    Vehicle Management Screen
-   Vehicles that were not assigned to any ride in a given year
-   NOT IN version
+
+   Vehicles not assigned to rides in 2025
+
+   מטרת השאילתה:
+   להציג רכבים שלא שויכו לאף נסיעה בשנת 2025.
+
+   משתמשים ב:
+   - NOT IN
+   - תאריך מתוך tourinstance
    ========================================================= */
+
 SELECT 
-    V.plateNumber,
+    V.platenumber,
     V.model,
     V.capacity,
-    V.carColor,
+    V.carcolor,
     V.year,
     V.status
-FROM VEHICLE V
-WHERE V.plateNumber NOT IN (
-    SELECT R.plateNumber
-    FROM RIDE R
-    WHERE EXTRACT(YEAR FROM R.orderDate) = 2025
-)
-ORDER BY V.model, V.plateNumber;
 
+FROM vehicle V
 
-/* =========================================================
-   QUERY 4B
-   Vehicle Management Screen
-   Vehicles that were not assigned to any ride in a given year
-   NOT EXISTS version
-   ========================================================= */
-SELECT 
-    V.plateNumber,
-    V.model,
-    V.capacity,
-    V.carColor,
-    V.year,
-    V.status
-FROM VEHICLE V
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM RIDE R
-    WHERE R.plateNumber = V.plateNumber
-      AND EXTRACT(YEAR FROM R.orderDate) = 2025
+WHERE V.platenumber NOT IN (
+
+    SELECT R.platenumber
+
+    FROM ride R
+
+    -- Connect ride to tour instance
+    JOIN tourinstance TI
+        ON R.t_i_id = TI.t_i_id
+
+    -- Filter only rides from 2025
+    WHERE EXTRACT(YEAR FROM TI.t_date) = 2025
 )
-ORDER BY V.model, V.plateNumber;
+
+-- Sort by model and plate number
+ORDER BY V.model, V.platenumber;
 
 
 /* =========================================================
    QUERY 5
    Dashboard
+
    Number of rides by year and month
+
+   מטרת השאילתה:
+   להציג כמה נסיעות קיימות בכל חודש ובכל שנה.
+
+   משתמשים ב:
+   - EXTRACT לפירוק תאריך
+   - GROUP BY לפי שנה וחודש
    ========================================================= */
+
 SELECT 
-    EXTRACT(YEAR FROM orderDate) AS rideYear,
-    EXTRACT(MONTH FROM orderDate) AS rideMonth,
+    -- Extract year from tour date
+    EXTRACT(YEAR FROM TI.t_date) AS rideYear,
+
+    -- Extract month from tour date
+    EXTRACT(MONTH FROM TI.t_date) AS rideMonth,
+
+    -- Count rides
     COUNT(*) AS totalRides
-FROM RIDE
-GROUP BY EXTRACT(YEAR FROM orderDate), EXTRACT(MONTH FROM orderDate)
+
+FROM ride R
+
+-- Connect ride to tour instance
+JOIN tourinstance TI
+    ON R.t_i_id = TI.t_i_id
+
+-- Group by year and month
+GROUP BY
+    EXTRACT(YEAR FROM TI.t_date),
+    EXTRACT(MONTH FROM TI.t_date)
+
+-- Sort chronologically
 ORDER BY rideYear, rideMonth;
 
 
 /* =========================================================
    QUERY 6
-   Reports / Route Analysis
-   Most popular routes by number of rides
+   Route Analysis
+
+   Most popular routes
+
+   מטרת השאילתה:
+   להציג אילו מסלולים הם הכי פופולריים
+   לפי מספר הנסיעות שבוצעו בהם.
+
+   משתמשים ב:
+   - JOIN בין route ל-ride
+   - COUNT לספירת נסיעות
    ========================================================= */
+
 SELECT 
+    -- Route information
     RT.origin,
     RT.destination,
-    RT.distanceKm,
-    RT.estimatedTravelTime,
-    COUNT(R.rideId) AS totalRidesOnRoute
-FROM ROUTE RT
-JOIN RIDE R
+    RT.distancekm,
+    RT.estimatedtraveltime,
+
+    -- Count rides on each route
+    COUNT(R.rideid) AS totalRidesOnRoute
+
+FROM route RT
+
+-- Connect rides to routes
+JOIN ride R
     ON RT.origin = R.origin
    AND RT.destination = R.destination
-GROUP BY RT.origin, RT.destination, RT.distanceKm, RT.estimatedTravelTime
-ORDER BY totalRidesOnRoute DESC, RT.origin, RT.destination;
 
+-- Group by route
+GROUP BY
+    RT.origin,
+    RT.destination,
+    RT.distancekm,
+    RT.estimatedtraveltime
 
-/* =========================================================
-   QUERY 7 - Fleet & Maintenance Screen
-   Vehicles with activity and last maintenance
-   ========================================================= */
-SELECT 
-    V.plateNumber,
-    V.model,
-    V.carColor,
-    V.year,
-    V.capacity,
-    V.status,
-    COUNT(R.rideId) AS totalRides,
-    MAX(M.maintenanceDate) AS lastMaintenanceDate
-FROM VEHICLE V
-LEFT JOIN RIDE R ON V.plateNumber = R.plateNumber
-LEFT JOIN MAINTENANCE M ON V.plateNumber = M.plateNumber
-GROUP BY 
-    V.plateNumber, V.model, V.carColor, V.year, V.capacity, V.status
-ORDER BY totalRides DESC;
-
-
-/* =========================================================
-   QUERY 8 - 
-   Customer Details Screen
-   Ride history of a specific existing customer
-   ========================================================= */
-SELECT 
-    C.id AS customerId,
-    C.fullName AS customerName,
-    C.phoneNumber AS customerPhone,
-    R.rideId,
-    R.orderDate,
-    EXTRACT(DAY FROM R.orderDate) AS rideDay,
-    EXTRACT(MONTH FROM R.orderDate) AS rideMonth,
-    EXTRACT(YEAR FROM R.orderDate) AS rideYear,
-    R.startTime,
-    R.endTime,
-    R.status AS rideStatus,
-    R.paymentMethod,
-    D.fullName AS driverName,
-    V.plateNumber,
-    V.model AS vehicleModel,
-    R.origin,
-    R.destination
-FROM CUSTOMER C
-JOIN RIDE R ON C.id = R.id
-JOIN DRIVER D ON R.licenseNumber = D.licenseNumber
-JOIN VEHICLE V ON R.plateNumber = V.plateNumber
-WHERE C.id = 1
-ORDER BY R.orderDate DESC, R.startTime DESC;
+-- Most popular routes first
+ORDER BY totalRidesOnRoute DESC;
