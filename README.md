@@ -1077,3 +1077,88 @@ UNIQUE למניעת כפילויות.
 
 
 
+מבט 1: driver_rides_view
+תיאור המבט
+
+המבט מציג את רשימת הנהגים במערכת ההסעות ואת מספר הנסיעות שיש לכל נהג.
+המבט מחבר בין טבלת הנהגים לבין טבלת הנסיעות לפי מספר רישיון הנהג.
+
+תמונת תוצאות הרצה נמצא בשאילת הראשונה 
+
+שאילת 1 
+SELECT *
+FROM driver_rides_view
+LIMIT 10;
+
+פלט הרצת שאילת:
+<img width="746" height="652" alt="image" src="https://github.com/user-attachments/assets/f76532e5-514e-46e9-9edc-40c21101f452" />
+
+
+שאילת 2 
+
+השאילתה מציגה רק נהגים שיש להם יותר מ־5 נסיעות, וממיינת אותם לפי מספר הנסיעות מהגבוה לנמוך.
+
+קוד השאילתה
+SELECT *
+FROM driver_rides_view
+WHERE total_rides > 5
+ORDER BY total_rides DESC;
+
+פלט הרצת שאילת:
+
+
+
+<img width="946" height="701" alt="image" src="https://github.com/user-attachments/assets/6d813a28-9e64-4ca1-9d5e-6df1d8051355" />
+
+
+
+מבט 2: approved_bookings_view
+תיאור המבט
+
+המבט מציג את כל ההזמנות המאושרות של מערכת הסיורים.
+המבט מחבר בין טבלת ההזמנות, טבלת מופעי הסיור וטבלת הסיורים, כך שניתן לראות עבור כל הזמנה מאושרת את פרטי ההזמנה, תאריך ושעות הסיור, שם הסיור, האזור, סוג הסיור והמחיר.
+
+תמונת תוצאות הרצה נמצא בשאילת הראשונה
+
+שאילת 1 
+
+SELECT *
+FROM approved_bookings_view
+LIMIT 10;
+
+פלט הרצת שאילת
+
+<img width="1497" height="651" alt="image" src="https://github.com/user-attachments/assets/efc7bda0-5ee6-454a-aea0-4af074c1e85b" />
+
+
+
+שאילת 2
+
+תיאור השאילתה
+
+השאילתה מחשבת עבור כל סיור את מספר ההזמנות המאושרות ואת סך ההכנסות ממנו.
+התוצאה ממוינת לפי ההכנסה הכוללת מהגבוה לנמוך.
+
+קוד השאילתה
+
+
+SELECT
+    t_name,
+    COUNT(*) AS approved_bookings_count,
+    SUM(total_price) AS total_income
+FROM approved_bookings_view
+GROUP BY t_name
+ORDER BY total_income DESC;
+
+
+
+
+פלט הרצת שאילת:
+
+
+<img width="1015" height="663" alt="image" src="https://github.com/user-attachments/assets/d218a75b-ceb3-4537-a4d5-49b598434ac1" />
+
+
+
+
+
