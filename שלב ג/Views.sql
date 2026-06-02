@@ -91,6 +91,22 @@ ORDER BY total_income DESC;
 
 
 
+
+SELECT
+    EXTRACT(YEAR FROM b_date) AS year,
+    EXTRACT(MONTH FROM b_date) AS month,
+    AVG(total_price) AS average_price
+FROM approved_bookings_view
+GROUP BY
+    EXTRACT(YEAR FROM b_date),
+    EXTRACT(MONTH FROM b_date)
+ORDER BY
+    year,
+    month;
+
+
+
+
 -- =====================================================
 -- VIEW 3: Integrated System View
 -- This view connects the transportation department
