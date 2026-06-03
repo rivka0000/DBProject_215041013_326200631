@@ -1156,9 +1156,121 @@ ORDER BY total_income DESC;
 פלט הרצת שאילת:
 
 
+
 <img width="1015" height="663" alt="image" src="https://github.com/user-attachments/assets/d218a75b-ceb3-4537-a4d5-49b598434ac1" />
 
 
 
 
+שלב ד 
 
+
+תיאור מילולי – תוכנית ראשית א
+
+התוכנית הראשית מרכזת את הפעלת כל הרכיבים שפותחו במסגרת שלב ד'. בתחילת הריצה היא מפעילה את הפונקציה get_transport_tours_report, אשר מפיקה דוח על טיולים המשויכים להסעות במערכת המשולבת. הפונקציה סורקת את הנתונים באמצעות Cursor, בודקת את המידע ומחזירה את תוצאות הדוח באמצעות Ref Cursor.
+
+לאחר קבלת ה־Ref Cursor, התוכנית מבצעת FETCH ומציגה חמש רשומות מהדוח. בכל רשומה מוצגים פרטים כגון מספר הנסיעה, שם הטיול, שם הנהג, דגם הרכב וההכנסה שנוצרה מהטיול. בנוסף, הפונקציה מדווחת כי נסרקו 250 טיולים המשויכים להסעות, ומתוכם נמצאו 7 טיולים בעלי הזמנות מאושרות.
+
+בהמשך, התוכנית מפעילה את הפרוצדורה update_pending_transport_rides, אשר מאתרת נסיעות במצב Pending ומעדכנת שלוש מהן למצב Completed. במהלך ביצוע העדכונים מופעל הטריגר trg_check_ride_status_update, אשר מזהה את שינוי הסטטוס ומציג הודעה עבור כל נסיעה שעודכנה.
+
+בצילום המסך ניתן לראות כי שלוש נסיעות (3239, 7675 ו־912) עודכנו בהצלחה מ־Pending ל־Completed, הטריגר הופעל עבור כל אחת מהן, והפרוצדורה סיימה את עבודתה בהצלחה לאחר שביצעה שלושה עדכונים.
+
+בסיום התהליך מוצגת הודעה המעידה כי הפונקציה, הפרוצדורה והטריגר פעלו בהצלחה, והתוכנית הראשית הסתיימה ללא שגיאות. צילום המסך מהווה הוכחה לכך שכל רכיבי המערכת פעלו כנדרש על בסיס הנתונים המשולב.
+
+
+
+קוד התוכנית:
+
+-- =====================================================
+-- File: 04_main_transport_tours.sql
+-- Stage D - Main Program
+-- Student: Tirtsa Abuhasira
+-- Database: restore_final_db
+--
+-- Purpose:
+-- Main program that calls:
+-- 1. Function: get_transport_tours_report
+-- 2. Procedure: update_pending_transport_rides
+--
+-- Programming elements demonstrated:
+-- - Ref Cursor
+-- - Record Variable
+-- - Loop
+-- - Function Call
+-- - Procedure Call
+-- - Exception Handling
+-- =====================================================
+
+DO $$
+
+DECLARE
+    -- Cursor returned from the function
+    report_cursor REFCURSOR;
+
+    -- Record used for FETCH operations
+    report_record RECORD;
+
+    -- Counter of displayed rows
+    row_counter INTEGER := 0;
+
+BEGIN
+    RAISE NOTICE '================================';
+    RAISE NOTICE 'Main program started';
+    RAISE NOTICE '================================';
+
+    -- Call function with minimum tour price 300.
+    -- This keeps the output readable but still returns rows.
+    report_cursor := get_transport_tours_report(300);
+
+    RAISE NOTICE
+    'Function get_transport_tours_report executed successfully';
+
+    -- Display only first 5 rows from the Ref Cursor
+    LOOP
+        FETCH report_cursor INTO report_record;
+
+        EXIT WHEN NOT FOUND;
+        EXIT WHEN row_counter >= 5;
+
+        row_counter := row_counter + 1;
+
+        RAISE NOTICE
+        'Row % | Ride % | Tour % | Driver % | Vehicle % | Income %',
+        row_counter,
+        report_record.rideid,
+        report_record.t_name,
+        report_record.driver_name,
+        report_record.vehicle_model,
+        report_record.total_income;
+    END LOOP;
+
+    -- Close cursor after using it
+    CLOSE report_cursor;
+
+    RAISE NOTICE
+    'Displayed rows from cursor: %',
+    row_counter;
+
+    -- Call procedure.
+    -- It updates 3 Pending rides to Completed.
+    CALL update_pending_transport_rides(3);
+
+    RAISE NOTICE
+    'Procedure update_pending_transport_rides executed successfully';
+
+    RAISE NOTICE '================================';
+    RAISE NOTICE 'Main program finished';
+    RAISE NOTICE '================================';
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RAISE NOTICE
+        'Error in main program: %',
+        SQLERRM;
+END;
+$$;
+
+
+
+פלט הרצת התוכנית:
+<img width="1129" height="738" alt="image" src="https://github.com/user-attachments/assets/4137a4cd-d17b-44b8-aa3b-3d334a1a663f" />
