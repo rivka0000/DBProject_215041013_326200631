@@ -1589,3 +1589,10 @@ EXCEPTION
 END;
 $$;
 ```
+
+**פלט הרצת התוכנית:**
+
+
+<img width="803" height="686" alt="image" src="https://github.com/user-attachments/assets/40fe8c7d-9f62-4b0e-af77-3f7779fca87c" />
+<img width="897" height="456" alt="image" src="https://github.com/user-attachments/assets/4e0225d9-456c-4fb7-9c9b-95b38ba4b2f1" />
+
