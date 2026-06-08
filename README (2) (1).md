@@ -1463,3 +1463,136 @@ $$;
 **פלט הרצת התוכנית:**
 
 <img width="1129" height="738" alt="image" src="https://github.com/user-attachments/assets/4137a4cd-d17b-44b8-aa3b-3d334a1a663f" />
+
+**תיאור מילולי – תוכנית ראשית ב**
+
+
+התוכנית הראשית מרכזת את הפעלת כל הרכיבים שפותחו במסגרת שלב ד' בנושא ניהול הזמנות לקוחות במערכת המשולבת. בתחילת הריצה היא מפעילה את הפונקציה get_customer_bookings_report, אשר מפיקה דוח על לקוחות וההזמנות שביצעו במערכת. הפונקציה סורקת את הנתונים באמצעות Explicit Cursor, מבצעת ניתוח של נתוני ההזמנות, ומחזירה את תוצאות הדוח באמצעות Ref Cursor.
+
+במהלך ביצוע הפונקציה נסרקו 1200 לקוחות במערכת, מתוכם נמצאו 500 לקוחות פעילים בעלי הזמנות מאושרות. בנוסף, חושב סך ההכנסות הכולל מההזמנות בדוח, אשר עמד על 15,262,723, ונמצא כי הלקוח בעל ההיקף הכספי הגבוה ביותר הוא Bobbette Caccavari עם סכום מצטבר של 55,401.
+
+לאחר קבלת ה־Ref Cursor, התוכנית מבצעת FETCH ומציגה חמש רשומות מהדוח. בכל רשומה מוצגים פרטים כגון שם הלקוח, מספר ההזמנות המאושרות, מספר ההזמנות שלא אושרו, סך התשלומים שביצע וסיווג הלקוח. בצילום המסך ניתן לראות את חמשת הלקוחות המובילים בדוח ואת הנתונים שחושבו עבור כל אחד מהם.
+
+בהמשך, התוכנית מפעילה את הפרוצדורה clean_old_unapproved_bookings, אשר מאתרת הזמנות ישנות שלא אושרו ומבצעת עדכון של ערך total_price ל־0, כך שלא ייחשבו כהכנסה במערכת. במהלך הריצה נסרקו 36 הזמנות, מתוכן עודכנו 10 הזמנות ו־26 הזמנות נוספות דולגו בהתאם לתנאי הפרוצדורה. בנוסף, חושב הסכום הכולל שנוקה מהמערכת, אשר עמד על 5,106.
+
+במהלך ביצוע העדכונים הופעל הטריגר trg_customer_bookings_update. הטריגר זיהה את השינויים שבוצעו בהזמנות והציג הודעות עבור כל הזמנה שעודכנה. לאחר מכן ביצעה התוכנית הדגמה נוספת של פעולת הטריגר, כאשר ניסתה לעדכן את ערך total_price של הזמנה מספר 54 ל־999. הטריגר הופעל באופן אוטומטי, זיהה כי מדובר בהזמנה שאינה מאושרת, והחזיר את הערך ל־0 בהתאם לכללי המערכת.
+
+בסיום התהליך מוצגות הודעות המעידות כי הפונקציה, הפרוצדורה והטריגר פעלו בהצלחה. צילום המסך מהווה הוכחה לכך שהפונקציה הפיקה דוח באמצעות Ref Cursor, הפרוצדורה ביצעה עדכונים בבסיס הנתונים, הטריגר הופעל באופן אוטומטי בעת ביצוע עדכונים, והתוכנית הראשית הסתיימה בהצלחה ללא שגיאות.
+
+
+**קוד התוכנית:**
+
+
+
+```sql
+-- =====================================================
+-- File: 08_main_customer_bookings.sql
+-- Stage D - Main Program
+--
+-- Purpose:
+-- Main program that calls:
+-- 1. Function: get_customer_bookings_report
+-- 2. Procedure: clean_old_unapproved_bookings
+--
+-- It also demonstrates the booking trigger by running an UPDATE.
+--
+-- Programming elements:
+-- 1. Ref Cursor
+-- 2. Record variable
+-- 3. Loop
+-- 4. Function call
+-- 5. Procedure call
+-- 6. UPDATE statement that activates the trigger
+-- 7. Exception handling
+-- =====================================================
+
+DO $$
+
+DECLARE
+    report_cursor REFCURSOR;
+    report_record RECORD;
+    row_counter INTEGER := 0;
+
+    test_booking_id INTEGER;
+    price_before NUMERIC;
+    price_after NUMERIC;
+
+BEGIN
+    RAISE NOTICE '================================';
+    RAISE NOTICE 'Customer bookings main program started';
+    RAISE NOTICE '================================';
+
+    -- Call function 05 and receive a Ref Cursor
+    report_cursor := get_customer_bookings_report(0);
+
+    RAISE NOTICE 'Top 5 customers from Ref Cursor:';
+
+    LOOP
+        FETCH report_cursor INTO report_record;
+
+        EXIT WHEN NOT FOUND;
+        EXIT WHEN row_counter >= 5;
+
+        row_counter := row_counter + 1;
+
+        RAISE NOTICE
+        '% | Customer: % | Approved: % | Unapproved: % | Total paid: % | Type: %',
+        row_counter,
+        report_record.customer_name,
+        report_record.approved_bookings,
+        report_record.unapproved_bookings,
+        report_record.total_paid,
+        report_record.customer_type;
+    END LOOP;
+
+    CLOSE report_cursor;
+
+    RAISE NOTICE 'Displayed rows: %', row_counter;
+
+    -- Call procedure 06
+    CALL clean_old_unapproved_bookings('2026-01-01', 10);
+
+    -- Demonstrate trigger 07
+    SELECT b_id, total_price
+    INTO test_booking_id, price_before
+    FROM bookings
+    WHERE b_status = FALSE
+    LIMIT 1;
+
+    IF test_booking_id IS NOT NULL THEN
+
+        UPDATE bookings
+        SET total_price = 999
+        WHERE b_id = test_booking_id;
+
+        SELECT total_price
+        INTO price_after
+        FROM bookings
+        WHERE b_id = test_booking_id;
+
+        RAISE NOTICE 'Trigger demonstration:';
+        RAISE NOTICE 'Booking id: %', test_booking_id;
+        RAISE NOTICE 'Tried to set total_price to: 999';
+        RAISE NOTICE 'Actual total_price after trigger: %', price_after;
+
+    ELSE
+        RAISE NOTICE 'No unapproved booking found for trigger demonstration';
+    END IF;
+
+    RAISE NOTICE '================================';
+    RAISE NOTICE 'Customer bookings main program finished';
+    RAISE NOTICE '================================';
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RAISE NOTICE 'Error in customer bookings main program: %', SQLERRM;
+END;
+$$;
+```
+
+**פלט הרצת התוכנית:**
+
+
+<img width="803" height="686" alt="image" src="https://github.com/user-attachments/assets/40fe8c7d-9f62-4b0e-af77-3f7779fca87c" />
+<img width="897" height="456" alt="image" src="https://github.com/user-attachments/assets/4e0225d9-456c-4fb7-9c9b-95b38ba4b2f1" />
+
