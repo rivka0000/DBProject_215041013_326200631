@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "transroute",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["שלב ה/app/app.py"],
+      "autoPort": true
+    }
+  ]
+}
