@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransRoute – מערכת ניהול תחבורה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css?v=5">
+</head>
+<body>
+<!-- LOGIN SCREEN -->
+<div id="login-screen" class="login-screen">
+  <div class="login-bg"></div>
+  <div class="login-card glass">
+    <div class="logo-ring">
+      <span class="logo-icon">🚌</span>
+    </div>
+    <h1 class="login-title">TransRoute</h1>
+    <p class="login-sub">מערכת ניהול תחבורה</p>
+    <div id="db-status" class="db-status checking">בודק חיבור לבסיס הנתונים...</div>
+    <button id="enter-btn" class="btn btn-primary btn-lg" onclick="enterSystem()" disabled>
+      כניסה למערכת
+    </button>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="app hidden">
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span>🚌</span>
+      <span class="sidebar-title">TransRoute</span>
+    </div>
+    <div class="sidebar-section-label">ניהול נתונים</div>
+    <a class="nav-item" onclick="navigate('dashboard')" data-page="dashboard"><span class="nav-ico" style="background:#E8F2FF">📊</span>לוח בקרה</a>
+    <a class="nav-item" onclick="navigate('driver')" data-page="driver"><span class="nav-ico" style="background:#E8F6EE">🧑‍✈️</span>נהגים</a>
+    <a class="nav-item" onclick="navigate('customer')" data-page="customer"><span class="nav-ico" style="background:#F3EAFE">👤</span>לקוחות</a>
+    <a class="nav-item" onclick="navigate('vehicle')" data-page="vehicle"><span class="nav-ico" style="background:#FFF2E0">🚗</span>רכבים</a>
+    <a class="nav-item" onclick="navigate('route')" data-page="route"><span class="nav-ico" style="background:#FFE9EC">🗺️</span>מסלולים</a>
+    <a class="nav-item" onclick="navigate('ride')" data-page="ride"><span class="nav-ico" style="background:#EBEAFD">🛣️</span>נסיעות</a>
+    <a class="nav-item" onclick="navigate('maintenance')" data-page="maintenance"><span class="nav-ico" style="background:#F2F2F7">🔧</span>תחזוקה</a>
+    <a class="nav-item" onclick="navigate('tour')" data-page="tour"><span class="nav-ico" style="background:#E0F7F5">🏕️</span>סיורים</a>
+    <a class="nav-item" onclick="navigate('tourinstance')" data-page="tourinstance"><span class="nav-ico" style="background:#FFF8DD">📅</span>מופעי סיור</a>
+    <a class="nav-item" onclick="navigate('bookings')" data-page="bookings"><span class="nav-ico" style="background:#EBEAFD">📋</span>הזמנות</a>
+    <a class="nav-item" onclick="navigate('guide')" data-page="guide"><span class="nav-ico" style="background:#E8F6EE">🎓</span>מדריכים</a>
+    <a class="nav-item" onclick="navigate('station')" data-page="station"><span class="nav-ico" style="background:#FFE9EC">📍</span>תחנות</a>
+    <a class="nav-item" onclick="navigate('tourstation')" data-page="tourstation"><span class="nav-ico" style="background:#E0F7F5">🚏</span>תחנות בסיור</a>
+    <div class="sidebar-section-label">שאילתות ופרוצדורות</div>
+    <a class="nav-item" onclick="navigate('queries')" data-page="queries"><span class="nav-ico" style="background:#E8F2FF">📈</span>שאילתות (שלב ב')</a>
+    <a class="nav-item" onclick="navigate('procedures')" data-page="procedures"><span class="nav-ico" style="background:#F2F2F7">⚙️</span>פונקציות (שלב ד')</a>
+    <div class="sidebar-footer">
+      <button class="btn btn-sm btn-ghost" onclick="logout()">🚪 יציאה</button>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="main-content" id="main-content">
+    <div class="topbar">
+      <button class="btn btn-ghost sidebar-toggle" onclick="toggleSidebar()">☰</button>
+      <h2 class="page-title" id="page-title">לוח בקרה</h2>
+    </div>
+    <div id="page-content" class="page-body"></div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+  <div class="modal glass" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 id="modal-title">טופס</h3>
+      <button class="btn btn-ghost btn-sm" onclick="closeModal()">✕</button>
+    </div>
+    <div id="modal-body" class="modal-body"></div>
+    <div class="modal-footer">
+      <button id="modal-save-btn" class="btn btn-primary" onclick="saveModal()">שמור</button>
+      <button class="btn btn-ghost" onclick="closeModal()">ביטול</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="/static/js/app.js?v=5"></script>
+</body>
+</html>

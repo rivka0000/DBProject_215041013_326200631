@@ -1,0 +1,2 @@
+נא לשמור כאן את צילומי המסך של המערכת (למשל: login_screen.png, dashboard.png, crud_table.png, queries.png, procedures.png)
+כך שהם יהיו זמינים להצגה בתיעוד הפרויקט.
