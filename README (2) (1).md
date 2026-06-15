@@ -1672,4 +1672,8 @@ python app.py
 * **הפקת דוח לקוחות והזמנות:** הפעלת הפונקציה `get_customer_bookings_report(min_price)` המקטלגת לקוחות לפי רמת פעילותם.
 * **ניקוי הזמנות ישנות שלא אושרו:** הפעלת הפרוצדורה `clean_old_unapproved_bookings(before_date, max_updates)` המאפסת מחירים של הזמנות ממתינות ישנות.
 
-### תמונות מסך של הפעלת האפליקציה
+
+
+##  תמונות מנסך של הפעלת האפליקציה
+
+<img width="1278" height="771" alt="צילום מסך 2026-06-15 214946" src="https://github.com/user-attachments/assets/7e968195-f70f-4097-8e6f-902eb7179da3" />
