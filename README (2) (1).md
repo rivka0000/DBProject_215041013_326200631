@@ -1671,3 +1671,5 @@ python app.py
 * **עדכון המוני של נסיעות ממתינות:** הפעלת הפרוצדורה `update_pending_transport_rides(max_updates)` המעבירה נסיעות במצב Pending למצב Completed ומציגה הודעת סיכום.
 * **הפקת דוח לקוחות והזמנות:** הפעלת הפונקציה `get_customer_bookings_report(min_price)` המקטלגת לקוחות לפי רמת פעילותם.
 * **ניקוי הזמנות ישנות שלא אושרו:** הפעלת הפרוצדורה `clean_old_unapproved_bookings(before_date, max_updates)` המאפסת מחירים של הזמנות ממתינות ישנות.
+
+### תמונות מסך של הפעלת האפליקציה
