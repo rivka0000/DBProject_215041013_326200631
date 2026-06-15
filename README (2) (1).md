@@ -1684,7 +1684,7 @@ python app.py
 
 
 
-##  תמונות מסך של הפעלת האפליקציה
+#### 📸 תמונות מסך של הפעלת האפליקציה
 
 <img width="1278" height="771" alt="צילום מסך 2026-06-15 214946" src="https://github.com/user-attachments/assets/7e968195-f70f-4097-8e6f-902eb7179da3" />
 
