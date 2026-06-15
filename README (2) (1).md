@@ -1677,55 +1677,107 @@ python app.py
 ##  תמונות מסך של הפעלת האפליקציה
 
 <img width="1278" height="771" alt="צילום מסך 2026-06-15 214946" src="https://github.com/user-attachments/assets/7e968195-f70f-4097-8e6f-902eb7179da3" />
+
 <img width="1551" height="367" alt="צילום מסך 2026-06-15 224526" src="https://github.com/user-attachments/assets/3aafedfe-99a0-4e93-b197-2fdbefbda8da" />
+
 <img width="1532" height="707" alt="צילום מסך 2026-06-15 224444" src="https://github.com/user-attachments/assets/c21cb0c4-f2ec-4af2-91c5-19c389116a7b" />
+
 <img width="1552" height="337" alt="צילום מסך 2026-06-15 224415" src="https://github.com/user-attachments/assets/3495af15-ffda-49d4-88b0-68e9e907276b" />
+
 <img width="1556" height="697" alt="צילום מסך 2026-06-15 224348" src="https://github.com/user-attachments/assets/c24ffd4f-d826-4545-972d-8e62b8c7c5e7" />
+
 <img width="1477" height="885" alt="צילום מסך 2026-06-15 224258" src="https://github.com/user-attachments/assets/758e0225-7113-4805-9087-28cdb1b9367e" />
+
 <img width="1535" height="667" alt="צילום מסך 2026-06-15 224232" src="https://github.com/user-attachments/assets/6fe70544-ee21-47d3-8f0f-1c889c1a9488" />
+
 <img width="703" height="572" alt="צילום מסך 2026-06-15 224146" src="https://github.com/user-attachments/assets/05480b0f-6f9e-4c6e-b5ce-88ea5db6af84" />
+
 <img width="688" height="572" alt="צילום מסך 2026-06-15 224121" src="https://github.com/user-attachments/assets/a40856c0-02a1-4129-a911-babb17fac8cb" />
+
 <img width="957" height="558" alt="צילום מסך 2026-06-15 224024" src="https://github.com/user-attachments/assets/dc299a30-04a0-4a61-ad49-6254ac8476b6" />
+
 <img width="702" height="540" alt="צילום מסך 2026-06-15 223944" src="https://github.com/user-attachments/assets/15f2d411-2eff-417d-8509-fa5f584a0546" />
+
 <img width="688" height="532" alt="צילום מסך 2026-06-15 223912" src="https://github.com/user-attachments/assets/442020bd-ec98-4f59-90d0-0006248625a7" />
+
 <img width="687" height="752" alt="צילום מסך 2026-06-15 223825" src="https://github.com/user-attachments/assets/721d671d-69f5-45e4-9060-08ffa1c433d8" />
+
 <img width="697" height="755" alt="צילום מסך 2026-06-15 223748" src="https://github.com/user-attachments/assets/0ddd3d5e-c09e-4c7b-93c6-7354ef4ae3e6" />
+
 <img width="690" height="762" alt="צילום מסך 2026-06-15 223646" src="https://github.com/user-attachments/assets/52af2a60-fde8-442d-9af5-0f6fe969e6f7" />
+
 <img width="688" height="752" alt="צילום מסך 2026-06-15 223617" src="https://github.com/user-attachments/assets/04bd9f6a-4bc1-462d-80c6-16e1f4dd2daf" />
+
 <img width="687" height="762" alt="צילום מסך 2026-06-15 223455" src="https://github.com/user-attachments/assets/e8f13e41-f271-4f66-a41d-7e23f3bf987a" />
+
 <img width="696" height="761" alt="צילום מסך 2026-06-15 223425" src="https://github.com/user-attachments/assets/211af762-0668-4bb4-8a64-0be07bb7ea16" />
+
 <img width="706" height="682" alt="צילום מסך 2026-06-15 223150" src="https://github.com/user-attachments/assets/9d446493-07eb-4468-b569-7b58b2b0c775" />
+
 <img width="702" height="677" alt="צילום מסך 2026-06-15 223111" src="https://github.com/user-attachments/assets/cbe35659-27ff-4715-8fcf-95a586ee6640" />
+
 <img width="697" height="732" alt="צילום מסך 2026-06-15 222438" src="https://github.com/user-attachments/assets/77066d26-d14b-42a4-a7a5-ccf2752fc0e6" />
+
 <img width="1076" height="940" alt="צילום מסך 2026-06-15 222327" src="https://github.com/user-attachments/assets/f6fd12fb-e2ee-4cda-93ae-67ac93a371cd" />
+
 <img width="708" height="766" alt="צילום מסך 2026-06-15 222221" src="https://github.com/user-attachments/assets/c5c285ee-9b64-4da2-b74a-fe4b44777503" />
+
 <img width="686" height="750" alt="צילום מסך 2026-06-15 222153" src="https://github.com/user-attachments/assets/3b9fdc32-38db-4158-8edc-b8ddadb8addd" />
+
 <img width="1553" height="912" alt="צילום מסך 2026-06-15 222111" src="https://github.com/user-attachments/assets/39556e33-e656-4768-ba66-0014192bc844" />
+
 <img width="718" height="583" alt="צילום מסך 2026-06-15 221759" src="https://github.com/user-attachments/assets/36cc40df-d025-4d85-8d6d-1260c00e24e6" />
+
 <img width="712" height="580" alt="צילום מסך 2026-06-15 221715" src="https://github.com/user-attachments/assets/b05153fe-437e-45e4-8eb6-a40ab329adc7" />
+
 <img width="707" height="761" alt="צילום מסך 2026-06-15 221611" src="https://github.com/user-attachments/assets/726ee55f-21de-4f6f-a115-89347227e053" />
+
 <img width="706" height="766" alt="צילום מסך 2026-06-15 221532" src="https://github.com/user-attachments/assets/ce7b2a60-d9cf-470f-b321-d5fe8352e89a" />
+
 <img width="1616" height="652" alt="צילום מסך 2026-06-15 221441" src="https://github.com/user-attachments/assets/21983b44-be62-46f7-8c2e-344c8c8c747b" />
+
 <img width="722" height="686" alt="צילום מסך 2026-06-15 221341" src="https://github.com/user-attachments/assets/a7ab1ebc-d243-423b-8b2e-843e9b8aa5ea" />
+
 <img width="717" height="702" alt="צילום מסך 2026-06-15 221254" src="https://github.com/user-attachments/assets/fd94797c-6022-44d4-bcdb-285c61ac71ad" />
+
 <img width="1492" height="297" alt="צילום מסך 2026-06-15 221210" src="https://github.com/user-attachments/assets/0f2a3b1b-c0fb-47af-b543-99e3f0437ff1" />
+
 <img width="710" height="610" alt="צילום מסך 2026-06-15 220859" src="https://github.com/user-attachments/assets/dafcd128-c243-4ba2-8def-be2092d161c9" />
+
 <img width="1537" height="156" alt="צילום מסך 2026-06-15 220805" src="https://github.com/user-attachments/assets/d1c519bd-38b4-4487-9e0b-631a7b6b98f9" />
+
 <img width="700" height="586" alt="צילום מסך 2026-06-15 220726" src="https://github.com/user-attachments/assets/171e770a-a989-488a-92de-49fcd372f30b" />
+
 <img width="1874" height="919" alt="צילום מסך 2026-06-15 220426" src="https://github.com/user-attachments/assets/557890db-323d-40a4-b176-a2dc9745bd96" />
+
 <img width="1895" height="922" alt="צילום מסך 2026-06-15 220137" src="https://github.com/user-attachments/assets/4dc828da-aa9b-4116-819d-f0d5c6246c6a" />
+
 <img width="1892" height="918" alt="צילום מסך 2026-06-15 220052" src="https://github.com/user-attachments/assets/1fc5179d-26d7-4006-856d-a19441a52e1d" />
+
 <img width="1877" height="887" alt="צילום מסך 2026-06-15 220017" src="https://github.com/user-attachments/assets/876c728c-7e67-4cd7-9a0c-fc173b2fa25c" />
+
 <img width="1896" height="910" alt="צילום מסך 2026-06-15 215934" src="https://github.com/user-attachments/assets/614cd584-9c2b-4a90-8216-a9ecd588510a" />
+
 <img width="1895" height="922" alt="צילום מסך 2026-06-15 215913" src="https://github.com/user-attachments/assets/55f19c19-a908-44b2-b6cb-74610543c5fa" />
+
 <img width="1877" height="925" alt="צילום מסך 2026-06-15 215847" src="https://github.com/user-attachments/assets/4dff6477-aeb8-4074-8089-3408cc7b2d02" />
+
 <img width="1872" height="916" alt="צילום מסך 2026-06-15 215822" src="https://github.com/user-attachments/assets/79788de6-e851-4472-ab6d-75fd49d2a40f" />
+
 <img width="1881" height="917" alt="צילום מסך 2026-06-15 215757" src="https://github.com/user-attachments/assets/6aaa8980-8e09-47b9-a8aa-64bc1c0bdbde" />
+
 <img width="1897" height="928" alt="צילום מסך 2026-06-15 215732" src="https://github.com/user-attachments/assets/25eb3b11-8786-45ea-9c7c-022f1cc97b87" />
+
 <img width="1883" height="918" alt="צילום מסך 2026-06-15 215710" src="https://github.com/user-attachments/assets/5e035ff1-3106-497f-9d23-14d662673578" />
+
 <img width="1871" height="922" alt="צילום מסך 2026-06-15 215605" src="https://github.com/user-attachments/assets/8162fac0-3c1e-4353-9528-57a20d6859a4" />
+
 <img width="1897" height="913" alt="צילום מסך 2026-06-15 215530" src="https://github.com/user-attachments/assets/83d2e03a-c1cf-4f66-8a5d-f6a574639760" />
+
 <img width="1888" height="917" alt="צילום מסך 2026-06-15 215505" src="https://github.com/user-attachments/assets/db898ff6-6525-4d32-a394-8baf1e71b663" />
+
 <img width="1890" height="926" alt="צילום מסך 2026-06-15 215429" src="https://github.com/user-attachments/assets/64a74b04-5266-4bda-b7fd-e28e7d99cad9" />
+
 <img width="1897" height="923" alt="צילום מסך 2026-06-15 215116" src="https://github.com/user-attachments/assets/e96a8f70-c70a-42f7-949c-62e4df727c29" />
+
 
